@@ -2,8 +2,8 @@ class AlphabetInput extends React.Component {
   render() {
     return (
       <div className="alphabet-input">
-        <label for="alphabet">Alphabet: </label>
-        <input type="text" id="alphabet" value={this.props.value} />
+        <label htmlFor="alphabet">Alphabet: </label>
+        <input type="text" id="alphabet" defaultValue={this.props.value} />
       </div>
     );
   }
@@ -13,8 +13,8 @@ class PangramInput extends React.Component {
   render() {
     return (
       <div className="pangram-input">
-        <label for="pangram">Pangram: </label>
-        <input type="text" id="pangram" value={this.props.value} />
+        <label htmlFor="pangram">Pangram: </label>
+        <input type="text" id="pangram" defaultValue={this.props.value} />
       </div>
     );
   }
