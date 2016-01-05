@@ -1,9 +1,29 @@
 class AlphabetInput extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      alphabet: '',
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ alphabet: this.prepareAlphabet(this.props.alphabet) });
+  }
+
+  prepareAlphabet(alphabet) {
+    return alphabet.trim().toLowerCase();
+  }
+
+  update(event) {
+    this.setState({ alphabet: this.prepareAlphabet(event.target.value) });
+  }
+
   render() {
     return (
       <div className="alphabet-input">
         <label htmlFor="alphabet">Alphabet: </label>
-        <input type="text" id="alphabet" defaultValue={this.props.alphabet} />
+        <input type="text" id="alphabet" defaultValue={ this.props.alphabet }
+          onChange={ this.update.bind(this) } />
       </div>
     );
   }
@@ -20,7 +40,8 @@ class PangramInput extends React.Component {
     return (
       <div className="pangram-input">
         <label htmlFor="pangram">Pangram: </label>
-        <input type="text" id="pangram" defaultValue={this.props.sentence} />
+        <input type="text" id="pangram" defaultValue={this.props.sentence}
+          onChange={console.log.bind(console)} />
       </div>
     );
   }
