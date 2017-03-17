@@ -34,11 +34,20 @@ class App extends Component {
     return (
       <main className="App">
         <section className="input-fields">
-          <AlphabetInput defaultAlphabet={alphabet} updateAlphabet={this.updateAlphabet} />
-          <PangramInput sentence={sentence} updateSentence={this.updateSentence}/>
+          <AlphabetInput
+            defaultAlphabet={alphabet}
+            updateAlphabet={this.updateAlphabet}
+          />
+          <PangramInput
+            sentence={sentence}
+            updateSentence={this.updateSentence}
+          />
         </section>
         <section className="output-validations">
-          <Validator alphabet={alphabet} />
+          <Validator
+            alphabet={alphabet}
+            sentence={sentence}
+          º/>
         </section>
       </main>
     );
