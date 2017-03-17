@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+section.input-fields, section.output-validations {
+  margin: 1em;
+  padding: .75em 1em;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1em;
+}
+
+.input-container, .output-letters {
+  text-align: center;
+}
