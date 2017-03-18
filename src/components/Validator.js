@@ -34,6 +34,7 @@ class Validator extends Component {
           ({letter, occurrences}) => <LetterCounter
             letter={letter}
             occurrences={occurrences}
+            key={`letter-${letter}`}
           />
         )}
       </ul>
