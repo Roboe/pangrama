@@ -32,24 +32,32 @@ class App extends Component {
     const {alphabet, sentence} = this.state;
 
     return (
-      <main className="App">
-        <section className="input-fields">
-          <AlphabetInput
-            defaultAlphabet={alphabet}
-            updateAlphabet={this.updateAlphabet}
-          />
-          <PangramInput
-            sentence={sentence}
-            updateSentence={this.updateSentence}
-          />
-        </section>
-        <section className="output-validations">
-          <Validator
-            alphabet={alphabet}
-            sentence={sentence}
-          º/>
-        </section>
-      </main>
+      <div id="app">
+        <header className="app-header">
+          <span className="app-title">Pangram Checker</span>
+        </header>
+        <main className="app-body">
+          <section className="input-fields">
+            <AlphabetInput
+              defaultAlphabet={alphabet}
+              updateAlphabet={this.updateAlphabet}
+            />
+            <PangramInput
+              sentence={sentence}
+              updateSentence={this.updateSentence}
+            />
+          </section>
+          <section className="output-validations">
+            <Validator
+              alphabet={alphabet}
+              sentence={sentence}
+            />
+          </section>
+          <footer className="app-footer">
+            <span className="app-credits"><a href="http://virgulilla.com" target="_blank">Made by @RoboePi 🦉</a></span>
+          </footer>
+        </main>
+      </div>
     );
   }
 }

@@ -29,7 +29,7 @@ class AlphabetInput extends Component {
   render() {
     return (
       <div className="input-container">
-        <label htmlFor="alphabet-input">Alphabet: </label>
+        <label htmlFor="alphabet-input">Alphabet</label>
         <input type="text" id="alphabet-input"
           defaultValue={this.props.defaultAlphabet}
           onChange={this.handleChange}
