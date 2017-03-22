@@ -4,22 +4,18 @@ class AlphabetInput extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      alphabet: '',
-    };
-
     this.handleChange = this.handleChange.bind(this);
   }
 
   prepareAlphabet(alphabet) {
-    const alphabetObject = [...alphabet.trim().toLowerCase()].reduce(
+    const lettersDictionary = [...alphabet.trim().toLowerCase()].reduce(
       (newAlphabet, letter) => {
         newAlphabet[letter] = undefined;
         return newAlphabet;
       },
       {},
     );
-    return Object.keys(alphabetObject).join('');
+    return Object.keys(lettersDictionary).join('');
   }
 
   handleChange(event) {
