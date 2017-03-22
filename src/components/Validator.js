@@ -2,14 +2,6 @@ import React, {Component} from 'react';
 import LetterCounter from './LetterCounter';
 
 class Validator extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      countedLetters: this.countAllLetters(props.alphabet, props.sentence),
-    };
-  }
-
   countOccurrences(letterToCount, sentence) {
     return [...sentence].filter(
       (currentLetter) => currentLetter === letterToCount
@@ -26,7 +18,7 @@ class Validator extends Component {
   }
 
   render() {
-    const {countedLetters} = this.state;
+    const countedLetters = this.countAllLetters(this.props.alphabet, this.props.sentence);
 
     return (
       <ul className="output-letters">
