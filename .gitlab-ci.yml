@@ -11,9 +11,9 @@ pages:
   stage: deploy
   script:
   - npm run build
-  - mkdir artifacts && mv build artifacts/public # See https://gitlab.com/gitlab-org/gitlab-ee/issues/401
+  - mv public public.repo && mv build public # See https://gitlab.com/gitlab-org/gitlab-ee/issues/401
   artifacts:
     paths:
-    - artifacts
+    - public
   only:
   - master
