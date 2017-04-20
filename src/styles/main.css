@@ -94,6 +94,7 @@ body,
 
 .pc-main--section {
   padding: 1rem;
+  margin-bottom: 2em;
 
   display: flex;
   flex-direction: column;
@@ -101,8 +102,34 @@ body,
   align-items: center;
 }
 
-.pc-io-container {
-  text-align: center;
+.pc-text-field {
+  width: 100%;
+  padding: 1em;
+}
+.pc-text-field--label {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5d4037;
+}
+.pc-text-field--input {
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  padding: 0.25em 0.5em;
+
+  border: none;
+  border-bottom: 2px solid grey;
+  border-radius: 0.2em;
+  background-color: #fafafa;
+}
+.pc-text-field--input:focus {
+  border: none;
+  border-bottom: 2px solid brown;
 }
 
 .pc-counters-list {

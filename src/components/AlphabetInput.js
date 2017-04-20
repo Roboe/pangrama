@@ -24,9 +24,9 @@ class AlphabetInput extends Component {
 
   render() {
     return (
-      <div className="pc-io-container">
-        <label htmlFor="alphabet-input">Alphabet</label>
-        <input type="text" id="alphabet-input"
+      <div className="pc-text-field">
+        <label htmlFor="alphabet-input" className="pc-text-field--label">Alphabet</label>
+        <input type="text" id="alphabet-input" className="pc-text-field--input"
           defaultValue={this.props.defaultAlphabet}
           onChange={this.handleChange}
         />
