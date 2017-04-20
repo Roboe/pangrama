@@ -21,7 +21,7 @@ class Validator extends Component {
     const countedLetters = this.countAllLetters(this.props.alphabet, this.props.sentence);
 
     return (
-      <ul className="output-letters">
+      <ul className="pc-counters-list">
         {countedLetters.map(
           ({letter, occurrences}) => <LetterCounter
             letter={letter}

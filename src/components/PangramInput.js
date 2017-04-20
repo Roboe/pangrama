@@ -17,7 +17,7 @@ class PangramInput extends Component {
 
   render() {
     return (
-      <div className="input-container">
+      <div className="pc-io-container">
         <label htmlFor="pangram-input">Pangram</label>
         <input type="text" id="pangram-input"
           defaultValue={this.props.sentence}

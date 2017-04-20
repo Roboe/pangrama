@@ -14,41 +14,35 @@ html,
 html,
 body,
 #root,
-#app {
+#pangram-checker {
   height: 100%;
 
   color: #212121;
   background-color: #efebe9;
 }
-
-a {
+#pangram-checker {
+  font-family: 'Fira Sans', sans-serif;
+}
+#pangram-checker a {
   color: #5d4037;
   text-decoration: none;
 }
 
 
-/* App structure */
-#app {
-  width: 100%;
-  font-family: 'Fira Sans', sans-serif;
-}
+/* Header */
 
-header.app-header,
-footer.app-footer {
+.pc-header {
   display: flex;
   width: 100%;
   height: 3.5rem;
 
   justify-content: center;
   flex-shrink: 0;
-}
-header.app-header {
+
   color: #ffffff;
   background-color: #795548;
 }
-
-header.app-header .app-title,
-footer.app-footer .app-credits {
+.pc-header--title {
   display: flex;
   width: 100%;
   max-width: 800px;
@@ -56,20 +50,15 @@ footer.app-footer .app-credits {
 
   align-items: center;
   justify-content: space-between;
-}
-header.app-header .app-title {
+
   font-size: 1.25rem;
   font-weight: 400;
 }
-footer.app-footer .app-credits {
-  width: auto;
 
-  font-size: 0.85rem;
-  font-weight: 300;
-  color: #8d6e63;
-}
 
-main.app-body {
+/* Main */
+
+.pc-body {
   display: flex;
   width: 100%;
   max-width: 800px;
@@ -80,14 +69,11 @@ main.app-body {
   justify-content: center;
   align-items: center;
 }
-main.app-body > * {
+.pc-body > * {
   max-width: 70%;
 }
 
-
-/* Main */
-section.input-fields,
-section.output-validations {
+.pc-body--section {
   display: flex;
   padding: 1rem;
 
@@ -96,13 +82,11 @@ section.output-validations {
   align-items: center;
 }
 
-.input-container,
-.output-letters {
+.pc-io-container {
   text-align: center;
 }
 
-
-ul.output-letters {
+.pc-counters-list {
   display: flex;
   margin: 0;
   padding: 0;
@@ -110,8 +94,14 @@ ul.output-letters {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+
+  text-align: center;
 }
-ul.output-letters > li {
+.pc-counters-list--item {
+  list-style: none;
+}
+
+.pc-letter-counter {
   display: flex;
   width: 3rem;
   height: 4rem;
@@ -119,6 +109,29 @@ ul.output-letters > li {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
 
-  list-style: none;
+
+/* Footer */
+
+.pc-footer {
+  display: flex;
+  width: 100%;
+  height: 3.5rem;
+
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pc-footer--credits {
+  display: flex;
+  width: auto;
+  max-width: 800px;
+  padding: 0 1.25rem;
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #8d6e63;
 }
