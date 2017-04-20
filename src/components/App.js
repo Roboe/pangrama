@@ -32,31 +32,37 @@ class App extends Component {
     const {alphabet, sentence} = this.state;
 
     return (
-      <div id="pangram-checker">
-        <header className="pc-header">
-          <span className="pc-header--title">Pangram Checker</span>
-        </header>
-        <main className="pc-body">
-          <section className="pc-body--section">
-            <AlphabetInput
-              defaultAlphabet={alphabet}
-              updateAlphabet={this.updateAlphabet}
-            />
-            <PangramInput
-              sentence={sentence}
-              updateSentence={this.updateSentence}
-            />
-          </section>
-          <section className="pc-body--section">
-            <Validator
-              alphabet={alphabet}
-              sentence={sentence}
-            />
-          </section>
+      <div id="pangram-checker" className="pc-structure">
+        <div className="pc-structure--header">
+          <header className="pc-header">
+            <span className="pc-header--title">Pangram Checker</span>
+          </header>
+        </div>
+        <div className="pc-structure--body">
+          <main className="pc-main">
+            <section className="pc-main--section">
+              <AlphabetInput
+                defaultAlphabet={alphabet}
+                updateAlphabet={this.updateAlphabet}
+              />
+              <PangramInput
+                sentence={sentence}
+                updateSentence={this.updateSentence}
+              />
+            </section>
+            <section className="pc-main--section">
+              <Validator
+                alphabet={alphabet}
+                sentence={sentence}
+              />
+            </section>
+          </main>
           <footer className="pc-footer">
-            <span className="pc-footer--credits"><a href="http://virgulilla.com" target="_blank">Made by @RoboePi 🦉</a></span>
+            <span className="pc-footer--credits">
+              Made by <a href="http://virgulilla.com" target="_blank">@RoboePi</a> <span className="emoji">🦉</span>
+            </span>
           </footer>
-        </main>
+        </div>
       </div>
     );
   }
