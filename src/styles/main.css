@@ -133,6 +133,12 @@ body,
   border-radius: 0.8rem;
   background-color: #d7ccc8;
 }
+.pc-letter-counter_pass {
+  order: 1;
+}
+.pc-letter-counter_fail {
+  order: 0;
+}
 .pc-letter-counter--character {
   width: 2rem;
   height: 2rem;
