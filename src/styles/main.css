@@ -198,15 +198,14 @@ body,
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-}
-.pc-footer--credits {
-  width: auto;
-  max-width: 800px;
-  padding: 0 1.25rem;
 
   font-size: 0.85rem;
   font-weight: 300;
   color: #8d6e63;
+}
+.pc-footer--credits,
+.pc-footer--license {
+  padding: 0 1em;
 }

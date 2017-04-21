@@ -61,6 +61,9 @@ class App extends Component {
             <span className="pc-footer--credits">
               Made by <a href="http://virgulilla.com" target="_blank">@RoboePi</a> <span className="emoji">🦉</span>
             </span>
+            <span className="pc-footer--license">
+              <a href="https://github.com/Roboe/pangrama">Source</a> (GPLv3)
+            </span>
           </footer>
         </div>
       </div>
