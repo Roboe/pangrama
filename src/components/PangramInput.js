@@ -18,11 +18,11 @@ class PangramInput extends Component {
   render() {
     return (
       <div className="pc-text-field">
-        <label htmlFor="pangram-input" className="pc-text-field--label">Pangram</label>
         <input type="text" id="pangram-input" className="pc-text-field--input"
           defaultValue={this.props.sentence}
           onChange={this.handleChange}
         />
+        <label htmlFor="pangram-input" className="pc-text-field--label">Pangram</label>
       </div>
     );
   }

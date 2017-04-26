@@ -1,0 +1,57 @@
+.pc-text-field {
+  width: 100%;
+  margin: 0.5em;
+
+  background-color: #fafafa;
+}
+.pc-text-field,
+.pc-text-field--input {
+  border-radius: 0.2em;
+}
+.pc-text-field--label {
+  color: #757575;
+  padding: 0.5em 0.5em 0 0.5em;
+}
+.pc-text-field--input {
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  padding: 0.25em 0.5em;
+
+  border: none;
+  border-bottom: 2px solid grey;
+  background-color: inherit;
+}
+.pc-text-field--input::selection {
+  color: #fafafa;
+  background-color: #a98274;
+}
+
+
+/*
+  Workaround to reverse the adjacent sibling selector
+  HTML order (<input> then <label>)
+  is reversed with CSS order property
+*/
+.pc-text-field {
+  display: flex;
+  flex-direction: column;
+}
+.pc-text-field--input {
+  order: 2;
+}
+.pc-text-field--label {
+  order: 1;
+}
+
+
+/*
+  When <input> has the focus
+*/
+.pc-text-field--input:focus {
+  border: none;
+  border-bottom: 2px solid #a98274;
+}
+.pc-text-field--input:focus + .pc-text-field--label {
+  color: #a98274;
+}
