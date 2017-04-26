@@ -1,0 +1,14 @@
+.pc-counters-list {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  flex-wrap: wrap;
+
+  text-align: center;
+}
+.pc-counters-list--item {
+  list-style: none;
+}

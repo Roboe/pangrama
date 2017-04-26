@@ -1,0 +1,80 @@
+@import '~normalize.css/normalize.css';
+@import '~typeface-fira-sans/index.css';
+
+
+/* Global */
+
+html,
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#pangram-checker {
+  height: 100%;
+
+  font-family: 'Fira Sans', sans-serif;
+  color: #212121;
+}
+#pangram-checker a {
+  color: #5d4037;
+  text-decoration: none;
+}
+
+
+/* App structure */
+
+.pc-structure {
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-structure--header {
+  height: 3.5rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: #795548;
+}
+
+.pc-structure--body {
+  flex-shrink: 1;
+  flex-grow: 1;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #efebe9;
+}
+
+.pc-header,
+.pc-main,
+.pc-footer {
+  width: 100%;
+  max-width: 800px;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.pc-main {
+  flex-grow: 1;
+}
+
+
+/* Blocks, elements and modifiers (BEM) */
+
+@import 'styles/header.css';
+@import 'styles/main-content.css';
+@import 'styles/text-field.css';
+@import 'styles/counter-list.css';
+@import 'styles/letter-counter.css';
+@import 'styles/footer.css';

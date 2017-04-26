@@ -1,0 +1,14 @@
+.pc-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pc-main--section {
+  padding: 1rem;
+  margin-bottom: 2em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
