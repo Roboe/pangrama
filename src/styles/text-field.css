@@ -51,6 +51,7 @@
 .pc-text-field--input:focus {
   border: none;
   border-bottom: 2px solid #a98274;
+  outline: none;
 }
 .pc-text-field--input:focus + .pc-text-field--label {
   color: #a98274;
