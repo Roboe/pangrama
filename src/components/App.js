@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import AlphabetInput from './AlphabetInput';
 import PangramInput from './PangramInput';
-import Validator from './Validator'
+import Validator from './Validator';
+import NewTabLink from './presentational/NewTabLink';
+import Emoji from './presentational/Emoji';
 
 class App extends Component {
   constructor(props) {
@@ -59,7 +61,7 @@ class App extends Component {
           </main>
           <footer className="pc-footer">
             <span className="pc-footer--credits">
-              Made by <a href="http://virgulilla.com" target="_blank">@RoboePi</a> <span className="emoji">🦉</span>
+              Made by <NewTabLink url="http://virgulilla.com">@RoboePi</NewTabLink> <Emoji emoji="&#x1f989;" label="Owl" />
             </span>
             <span className="pc-footer--license">
               <a href="https://github.com/Roboe/pangrama">Source</a> (GPLv3)
