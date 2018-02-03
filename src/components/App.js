@@ -10,8 +10,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      alphabet: 'abcdefghijklmnñopqrstuvwxyz',
-      sentence: 'El husky vietnamita excava en busca de galletas. Su quijotesco dueño sube una foto a la web con presteza.',
+      alphabet: 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz',
+      sentence: 'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia exisitiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.',
     };
 
     this.updateAlphabet = this.updateAlphabet.bind(this);
