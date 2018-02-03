@@ -17,8 +17,15 @@ class Validator extends Component {
     );
   }
 
+  prepareSentence(sentence) {
+    return sentence.toLowerCase();
+  }
+
   render() {
-    const countedLetters = this.countAllLetters(this.props.alphabet, this.props.sentence);
+    const {alphabet, sentence} = this.props;
+
+    const preparedSentence = this.prepareSentence(sentence);
+    const countedLetters = this.countAllLetters(alphabet, preparedSentence);
 
     return (
       <ul className="pc-counters-list">

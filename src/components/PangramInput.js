@@ -8,7 +8,7 @@ class PangramInput extends Component {
   }
 
   prepareSentence(sentence) {
-    return sentence.trim().toLowerCase();
+    return sentence.trim();
   }
 
   handleChange(event) {
