@@ -1,41 +1,41 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import LetterCounter from './LetterCounter';
+import { compose } from '../helpers/functional';
+import { trim, lowercase, isEqualTo as isLetter } from '../helpers/strings';
+
+const prepareSentence = compose(lowercase, trim);
+
+const countOccurrences = (letter, sentence) => [...sentence]
+  .filter(isLetter(letter))
+  .length;
+
+const countLetterIn = (sentence) => (letter) => ({
+  letter: letter,
+  occurrences: countOccurrences(letter, sentence),
+});
+
+const countAllLetters = (alphabet, sentence) => [...alphabet]
+  .map(countLetterIn(sentence));
+
 
 class Validator extends Component {
-  countOccurrences(letterToCount, sentence) {
-    return [...sentence].filter(
-      (currentLetter) => currentLetter === letterToCount
-    ).length;
-  }
-
-  countAllLetters(alphabet, sentence) {
-    return [...alphabet].map(
-      (letterToCount) => ({
-        letter: letterToCount,
-        occurrences: this.countOccurrences(letterToCount, sentence),
-      })
-    );
-  }
-
-  prepareSentence(sentence) {
-    return sentence.toLowerCase();
-  }
+  renderLetterCounter = ({ letter, occurrences }) => (
+    <LetterCounter
+      letter={ letter }
+      occurrences={ occurrences }
+      key={ `letter-${ letter }` }
+    />
+  )
 
   render() {
-    const {alphabet, sentence} = this.props;
+    const { alphabet, sentence } = this.props;
 
-    const preparedSentence = this.prepareSentence(sentence);
-    const countedLetters = this.countAllLetters(alphabet, preparedSentence);
+    const lowercaseSentence = prepareSentence(sentence);
+    const countedLetters = countAllLetters(alphabet, lowercaseSentence);
 
     return (
       <ul className="pc-counters-list">
-        {countedLetters.map(
-          ({letter, occurrences}) => <LetterCounter
-            letter={letter}
-            occurrences={occurrences}
-            key={`letter-${letter}`}
-          />
-        )}
+        { countedLetters.map(this.renderLetterCounter) }
       </ul>
     );
   }

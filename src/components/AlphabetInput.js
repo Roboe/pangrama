@@ -1,38 +1,25 @@
 import React, { Component } from 'react';
+import { compose } from '../helpers/functional';
+import { trim, lowercase, deduplicate } from '../helpers/strings';
+
+const prepareAlphabet = compose(deduplicate, lowercase, trim);
 
 class AlphabetInput extends Component {
-  constructor(props) {
-    super(props);
+  handleChange = compose(
+    this.props.updateAlphabet,
+    prepareAlphabet,
+    (event) => event.target.value,
+  )
 
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  prepareAlphabet(alphabet) {
-    const lettersDictionary = [...alphabet.trim().toLowerCase()].reduce(
-      (newAlphabet, letter) => {
-        newAlphabet[letter] = undefined;
-        return newAlphabet;
-      },
-      {},
-    );
-    return Object.keys(lettersDictionary).join('');
-  }
-
-  handleChange(event) {
-    this.props.updateAlphabet(this.prepareAlphabet(event.target.value));
-  }
-
-  render() {
-    return (
-      <div className="pc-text-field">
-        <input type="text" id="alphabet-input" className="pc-text-field--input"
-          defaultValue={this.props.defaultAlphabet}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="alphabet-input" className="pc-text-field--label">Alphabet</label>
-      </div>
-    );
-  }
+  render = () => (
+    <div className="pc-text-field">
+      <input type="text" id="alphabet-input" className="pc-text-field--input"
+        defaultValue={ this.props.alphabet }
+        onChange={ this.handleChange }
+      />
+      <label htmlFor="alphabet-input" className="pc-text-field--label">Alphabet</label>
+    </div>
+  )
 }
 
 export default AlphabetInput;

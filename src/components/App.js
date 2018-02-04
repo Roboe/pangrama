@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   render() {
-    const {alphabet, sentence} = this.state;
+    const { alphabet, sentence } = this.state;
 
     return (
       <div id="pangram-checker" className="pc-structure">
@@ -44,18 +44,18 @@ class App extends Component {
           <main className="pc-main">
             <section className="pc-main--section">
               <AlphabetInput
-                defaultAlphabet={alphabet}
-                updateAlphabet={this.updateAlphabet}
+                alphabet={ alphabet }
+                updateAlphabet={ this.updateAlphabet }
               />
               <PangramInput
-                sentence={sentence}
-                updateSentence={this.updateSentence}
+                sentence={ sentence }
+                updateSentence={ this.updateSentence }
               />
             </section>
             <section className="pc-main--section">
               <Validator
-                alphabet={alphabet}
-                sentence={sentence}
+                alphabet={ alphabet }
+                sentence={ sentence }
               />
             </section>
           </main>
@@ -64,7 +64,7 @@ class App extends Component {
               Made by <NewTabLink url="http://virgulilla.com">@RoboePi</NewTabLink> <Emoji emoji="&#x1f989;" label="Owl" />
             </span>
             <span className="pc-footer--license">
-              <a href="https://github.com/Roboe/pangrama">Source</a> (GPLv3)
+              <NewTabLink url="https://github.com/Roboe/pangrama">Source</NewTabLink> (GPLv3)
             </span>
           </footer>
         </div>
