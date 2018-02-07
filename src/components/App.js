@@ -11,7 +11,7 @@ class App extends Component {
 
     this.state = {
       alphabet: 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz',
-      sentence: 'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia exisitiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.',
+      sentence: 'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.',
     };
 
     this.updateAlphabet = this.updateAlphabet.bind(this);
