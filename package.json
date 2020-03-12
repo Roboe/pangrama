@@ -5,10 +5,10 @@
   "homepage": ".",
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "^3.2.0",
-    "typeface-fira-sans": "0.0.54"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^3.4.0",
+    "typeface-fira-sans": "0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",
