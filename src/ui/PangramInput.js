@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { compose } from '../helpers/functional';
-import {
-  trim as prepareSentence
-} from '../helpers/strings';
+import { compose } from '../application/helpers/functional';
+import { prepareForShowing as prepareSentence } from '../application/pangram';
+
 
 class PangramInput extends Component {
   handleChange = compose(

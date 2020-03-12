@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { compose } from '../helpers/functional';
-import { trim, lowercase, deduplicate } from '../helpers/strings';
+import { compose } from '../application/helpers/functional';
+import { prepare as prepareAlphabet } from '../application/alphabet';
 
-const prepareAlphabet = compose(deduplicate, lowercase, trim);
 
 class AlphabetInput extends Component {
   handleChange = compose(

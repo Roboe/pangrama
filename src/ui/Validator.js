@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
 import LetterCounter from './LetterCounter';
-import { compose } from '../helpers/functional';
-import { trim, lowercase, isEqualTo as isLetter } from '../helpers/strings';
-
-const prepareSentence = compose(lowercase, trim);
-
-const countOccurrences = (letter, sentence) => [...sentence]
-  .filter(isLetter(letter))
-  .length;
-
-const countLetterIn = (sentence) => (letter) => ({
-  letter: letter,
-  occurrences: countOccurrences(letter, sentence),
-});
-
-const countAllLetters = (alphabet, sentence) => [...alphabet]
-  .map(countLetterIn(sentence));
+import {
+  prepareForValidating as prepareSentence,
+  countAllLetters,
+} from '../application/pangram';
 
 
 class Validator extends Component {

@@ -72,9 +72,9 @@ body,
 
 /* Blocks, elements and modifiers (BEM) */
 
-@import 'styles/header.css';
-@import 'styles/main-content.css';
-@import 'styles/text-field.css';
-@import 'styles/counter-list.css';
-@import 'styles/letter-counter.css';
-@import 'styles/footer.css';
+@import 'ui/styles/header.css';
+@import 'ui/styles/main-content.css';
+@import 'ui/styles/text-field.css';
+@import 'ui/styles/counter-list.css';
+@import 'ui/styles/letter-counter.css';
+@import 'ui/styles/footer.css';
