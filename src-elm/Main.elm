@@ -41,23 +41,25 @@ init =
 type Msg
   = UpdateAlphabet String
   | UpdateSentence String
-  | ValidatePangram
 
 
 update : Msg -> Model -> Model
 update msg model =
   case msg of
     UpdateAlphabet newAlphabet ->
-      { model | alphabet = Pangram.parseAlphabet newAlphabet }
+      let
+        alphabet = Pangram.parseAlphabet newAlphabet
+      in
+      { model
+      | alphabet = alphabet
+      , validation = Pangram.validate alphabet model.sentence
+      }
 
     UpdateSentence newSentence ->
-      { model | sentence = newSentence }
-      
-    ValidatePangram ->
-      let
-        validate = Pangram.validate model.alphabet
-      in
-      { model | validation = validate model.sentence }
+      { model
+      | sentence = newSentence
+      , validation = Pangram.validate model.alphabet newSentence
+      }
 
 
 -- VIEW
@@ -89,7 +91,6 @@ viewMain model =
         ]
     , section [ class "pc-main--section" ]
         [ viewValidation model.validation
-        , input [ type_ "button", onClick ValidatePangram, value "Validate"] []
         ]
     ]
 
