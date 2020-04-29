@@ -37,6 +37,19 @@ prepareSentence = String.toLower << String.trim
 
 -- ACTIONS
 
+compareCountedLetters : CountedLetter -> CountedLetter -> Order
+compareCountedLetters (_, ocurrencesA) (_, ocurrencesB) =
+  case (ocurrencesA, ocurrencesB) of
+    (0, 0) -> EQ
+    (0, _) -> LT
+    (_, 0) -> GT
+    _ -> EQ
+
+sortValidation : Validation -> Validation
+sortValidation validation =
+  List.sortWith compareCountedLetters validation
+
+
 countLetterIn : String -> Char -> CountedLetter
 countLetterIn sentence letter =
   ( letter

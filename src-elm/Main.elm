@@ -140,8 +140,11 @@ viewInput inputId handleInput labelText defaultText =
 
 viewValidation : Pangram.Validation -> Html any
 viewValidation validation =
+  let
+    sortedValidation = Pangram.sortValidation validation
+  in
   ul [ class "pc-counters-list" ]
-    <| List.map viewLetterCounter validation
+    <| List.map viewLetterCounter sortedValidation
 
 getValidationClass number =
       case number of
