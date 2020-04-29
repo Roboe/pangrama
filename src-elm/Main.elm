@@ -112,7 +112,7 @@ viewFooter =
     ]
 
 
--- INPUT VIEWS
+-- USER INPUT VIEWS
 
 viewAlphabetInput : Pangram.Alphabet -> Html Msg
 viewAlphabetInput = viewInput "alphabet-input" UpdateAlphabet "Alphabet" << String.fromList
@@ -136,7 +136,7 @@ viewInput inputId handleInput labelText defaultText =
     ]
 
 
--- OUTPUT VIEWS
+-- VALIDATION VIEWS
 
 viewValidation : Pangram.Validation -> Html any
 viewValidation validation =
@@ -145,11 +145,6 @@ viewValidation validation =
   in
   ul [ class "pc-counters-list" ]
     <| List.map viewLetterCounter sortedValidation
-
-getValidationClass number =
-      case number of
-        0 -> "pc-letter-counter_fail"
-        _ -> "pc-letter-counter_pass"
 
 viewLetterCounter : Pangram.CountedLetter -> Html any
 viewLetterCounter (letter, occurrences) =
@@ -163,6 +158,14 @@ viewLetterCounter (letter, occurrences) =
     , span [ class "pc-letter-counter--number" ]
         [ text <| String.fromInt occurrences ]
     ]
+
+
+-- VALIDATION HELPERS
+
+getValidationClass number =
+      case number of
+        0 -> "pc-letter-counter_fail"
+        _ -> "pc-letter-counter_pass"
 
 
 -- PRESENTATIONAL VIEWS
