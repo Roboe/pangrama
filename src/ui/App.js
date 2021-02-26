@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AlphabetInput from './AlphabetInput';
 import PangramInput from './PangramInput';
 import Validator from './Validator';
@@ -48,49 +48,28 @@ const UIApp = ({ header, main, footer }) => {
   );
 };
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [alphabet, updateAlphabet] = useState(
+    'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
+  );
+  const [sentence, updateSentence] = useState(
+    'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.'
+  );
 
-    this.state = {
-      alphabet: 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz',
-      sentence: 'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.',
-    };
-
-    this.updateAlphabet = this.updateAlphabet.bind(this);
-    this.updateSentence = this.updateSentence.bind(this);
-  }
-
-  updateAlphabet(newAlphabet) {
-    this.setState({
-      alphabet: newAlphabet,
-    });
-  }
-
-  updateSentence(newSentence) {
-    this.setState({
-      sentence: newSentence,
-    });
-  }
-
-  render() {
-    const { alphabet, sentence } = this.state;
-
-    return (
-      <UIApp
-        header={<UIHeader />}
-        main={
-          <UIMain
-            alphabet={alphabet}
-            sentence={sentence}
-            updateAlphabet={this.updateAlphabet}
-            updateSentence={this.updateSentence}
-          />
-        }
-        footer={<UIFooter />}
-      />
-    );
-  }
+  return (
+    <UIApp
+      header={<UIHeader />}
+      main={
+        <UIMain
+          alphabet={alphabet}
+          sentence={sentence}
+          updateAlphabet={updateAlphabet}
+          updateSentence={updateSentence}
+        />
+      }
+      footer={<UIFooter />}
+    />
+  );
 }
 
 export default App;
