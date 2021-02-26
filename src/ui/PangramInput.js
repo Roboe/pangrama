@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { compose } from '../application/helpers/functional'
 import { prepareForShowing as prepareSentence } from '../application/pangram'
 
@@ -16,19 +16,15 @@ const UIPangramInput = ({ sentence, handleChange }) => (
     </label>
   </div>
 )
-class PangramInput extends Component {
-  handleChange = compose(
-    this.props.updateSentence,
+
+const PangramInput = ({ sentence, updateSentence }) => {
+  const handleChange = compose(
+    updateSentence,
     prepareSentence,
     (event) => event.target.value
   )
 
-  render = () => (
-    <UIPangramInput
-      sentence={this.props.sentence}
-      handleChange={this.handleChange}
-    />
-  )
+  return <UIPangramInput sentence={sentence} handleChange={handleChange} />
 }
 
 export default PangramInput
