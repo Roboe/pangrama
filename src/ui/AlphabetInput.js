@@ -2,6 +2,21 @@ import React, { Component } from 'react'
 import { compose } from '../application/helpers/functional'
 import { prepare as prepareAlphabet } from '../application/alphabet'
 
+const UIAlphabetInput = ({ alphabet, handleChange }) => (
+  <div className="pc-text-field">
+    <input
+      type="text"
+      id="alphabet-input"
+      className="pc-text-field--input"
+      defaultValue={alphabet}
+      onChange={handleChange}
+    />
+    <label htmlFor="alphabet-input" className="pc-text-field--label">
+      Alphabet
+    </label>
+  </div>
+)
+
 class AlphabetInput extends Component {
   handleChange = compose(
     this.props.updateAlphabet,
@@ -10,18 +25,10 @@ class AlphabetInput extends Component {
   )
 
   render = () => (
-    <div className="pc-text-field">
-      <input
-        type="text"
-        id="alphabet-input"
-        className="pc-text-field--input"
-        defaultValue={this.props.alphabet}
-        onChange={this.handleChange}
-      />
-      <label htmlFor="alphabet-input" className="pc-text-field--label">
-        Alphabet
-      </label>
-    </div>
+    <UIAlphabetInput
+      alphabet={this.props.alphabet}
+      handleChange={this.handleChange}
+    />
   )
 }
 
