@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { compose } from '../application/helpers/functional'
 import { prepare as prepareAlphabet } from '../application/alphabet'
 
@@ -17,19 +17,14 @@ const UIAlphabetInput = ({ alphabet, handleChange }) => (
   </div>
 )
 
-class AlphabetInput extends Component {
-  handleChange = compose(
-    this.props.updateAlphabet,
+const AlphabetInput = ({ alphabet, updateAlphabet }) => {
+  const handleChange = compose(
+    updateAlphabet,
     prepareAlphabet,
     (event) => event.target.value
   )
 
-  render = () => (
-    <UIAlphabetInput
-      alphabet={this.props.alphabet}
-      handleChange={this.handleChange}
-    />
-  )
+  return <UIAlphabetInput alphabet={alphabet} handleChange={handleChange} />
 }
 
 export default AlphabetInput
