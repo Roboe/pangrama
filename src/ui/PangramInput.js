@@ -1,13 +1,13 @@
 import React from 'react'
-import { compose } from '../application/helpers/functional'
+import { pipe } from '../application/helpers/functional'
 import { prepareForShowing as prepareSentence } from '../application/pangram'
 import TextField from './presentational/TextField'
 
 const PangramInput = ({ sentence, updateSentence }) => {
-  const handleChange = compose(
-    updateSentence,
+  const handleChange = pipe(
+    (event) => event.target.value,
     prepareSentence,
-    (event) => event.target.value
+    updateSentence,
   )
 
   return (

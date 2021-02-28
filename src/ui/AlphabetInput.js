@@ -1,13 +1,13 @@
 import React from 'react'
-import { compose } from '../application/helpers/functional'
+import { pipe } from '../application/helpers/functional'
 import { prepare as prepareAlphabet } from '../application/alphabet'
 import TextField from './presentational/TextField'
 
 const AlphabetInput = ({ alphabet, updateAlphabet }) => {
-  const handleChange = compose(
-    updateAlphabet,
+  const handleChange = pipe(
+    (event) => event.target.value,
     prepareAlphabet,
-    (event) => event.target.value
+    updateAlphabet,
   )
 
   return (

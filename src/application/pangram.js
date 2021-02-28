@@ -1,4 +1,4 @@
-import { compose } from './helpers/functional';
+import { pipe } from './helpers/functional';
 import {
     trim,
     lowercase,
@@ -8,7 +8,7 @@ import {
 
 export const prepareForShowing = trim;
 
-export const prepareForValidating = compose(lowercase, trim);
+export const prepareForValidating = pipe(trim, lowercase);
 
 const countOccurrences = (letter, sentence) => [...sentence]
   .filter(isLetter(letter))
