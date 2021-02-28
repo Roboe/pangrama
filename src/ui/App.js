@@ -2,41 +2,9 @@ import React, { useState } from 'react'
 import AlphabetInput from './AlphabetInput'
 import PangramInput from './PangramInput'
 import Validator from './Validator'
+import { Structure, Header, Main, Footer } from './presentational/Structure'
 import NewTabLink from './presentational/NewTabLink'
 import Emoji from './presentational/Emoji'
-
-const UIHeader = () => (
-  <header className="pc-header">
-    <span className="pc-header--title">Pangram Checker</span>
-  </header>
-)
-
-const UIMain = ({ sections }) => (
-  <main className="pc-main">
-    {sections.map((section) => (
-      <section className="pc-main--section">{section}</section>
-    ))}
-  </main>
-)
-
-const UIFooter = ({ credits, license }) => (
-  <footer className="pc-footer">
-    <span className="pc-footer--credits">{credits}</span>
-    <span className="pc-footer--license">{license}</span>
-  </footer>
-)
-
-const UIApp = ({ header, main, footer }) => {
-  return (
-    <div id="pangram-checker" className="pc-structure">
-      <div className="pc-structure--header">{header}</div>
-      <div className="pc-structure--body">
-        {main}
-        {footer}
-      </div>
-    </div>
-  )
-}
 
 const App = () => {
   const [alphabet, updateAlphabet] = useState(
@@ -47,10 +15,10 @@ const App = () => {
   )
 
   return (
-    <UIApp
-      header={<UIHeader />}
+    <Structure
+      header={<Header />}
       main={
-        <UIMain
+        <Main
           sections={[
             <>
               <AlphabetInput
@@ -67,7 +35,7 @@ const App = () => {
         />
       }
       footer={
-        <UIFooter
+        <Footer
           credits={
             <>
               Made by{' '}
