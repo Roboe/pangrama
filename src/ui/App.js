@@ -11,28 +11,18 @@ const UIHeader = () => (
   </header>
 )
 
-const UIMain = ({ alphabet, sentence, updateAlphabet, updateSentence }) => (
+const UIMain = ({ sections }) => (
   <main className="pc-main">
-    <section className="pc-main--section">
-      <AlphabetInput alphabet={alphabet} updateAlphabet={updateAlphabet} />
-      <PangramInput sentence={sentence} updateSentence={updateSentence} />
-    </section>
-    <section className="pc-main--section">
-      <Validator alphabet={alphabet} sentence={sentence} />
-    </section>
+    {sections.map((section) => (
+      <section className="pc-main--section">{section}</section>
+    ))}
   </main>
 )
 
-const UIFooter = () => (
+const UIFooter = ({ credits, license }) => (
   <footer className="pc-footer">
-    <span className="pc-footer--credits">
-      Made by <NewTabLink url="http://virgulilla.com">@RoboePi</NewTabLink>{' '}
-      <Emoji emoji="&#x1f989;" label="Owl" />
-    </span>
-    <span className="pc-footer--license">
-      <NewTabLink url="https://github.com/Roboe/pangrama">Source</NewTabLink>{' '}
-      (GPLv3)
-    </span>
+    <span className="pc-footer--credits">{credits}</span>
+    <span className="pc-footer--license">{license}</span>
   </footer>
 )
 
@@ -61,13 +51,40 @@ const App = () => {
       header={<UIHeader />}
       main={
         <UIMain
-          alphabet={alphabet}
-          sentence={sentence}
-          updateAlphabet={updateAlphabet}
-          updateSentence={updateSentence}
+          sections={[
+            <>
+              <AlphabetInput
+                alphabet={alphabet}
+                updateAlphabet={updateAlphabet}
+              />
+              <PangramInput
+                sentence={sentence}
+                updateSentence={updateSentence}
+              />
+            </>,
+            <Validator alphabet={alphabet} sentence={sentence} />,
+          ]}
         />
       }
-      footer={<UIFooter />}
+      footer={
+        <UIFooter
+          credits={
+            <>
+              Made by{' '}
+              <NewTabLink url="http://virgulilla.com">@RoboePi</NewTabLink>{' '}
+              <Emoji emoji="&#x1f989;" label="Owl" />
+            </>
+          }
+          license={
+            <>
+              <NewTabLink url="https://github.com/Roboe/pangrama">
+                Source
+              </NewTabLink>{' '}
+              (GPLv3)
+            </>
+          }
+        />
+      }
     />
   )
 }
