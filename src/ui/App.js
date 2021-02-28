@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <Structure
-      header={<Header />}
+      header={<Header title="Pangram Checker" />}
       main={
         <Main
           sections={[

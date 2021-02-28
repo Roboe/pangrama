@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Header = () => (
+export const Header = ({ title }) => (
   <header className="pc-header">
-    <span className="pc-header--title">Pangram Checker</span>
+    <span className="pc-header--title">{title}</span>
   </header>
 )
 
