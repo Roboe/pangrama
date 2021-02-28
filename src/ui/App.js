@@ -6,13 +6,13 @@ import { Structure, Header, Main, Footer } from './presentational/Structure'
 import NewTabLink from './presentational/NewTabLink'
 import Emoji from './presentational/Emoji'
 
+const defaultAlphabet = 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
+const defaultSentence =
+  'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.'
+
 const App = () => {
-  const [alphabet, updateAlphabet] = useState(
-    'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
-  )
-  const [sentence, updateSentence] = useState(
-    'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.'
-  )
+  const [alphabet, updateAlphabet] = useState(defaultAlphabet)
+  const [sentence, updateSentence] = useState(defaultSentence)
 
   return (
     <Structure
