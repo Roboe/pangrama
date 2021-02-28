@@ -1,21 +1,7 @@
 import React from 'react'
 import { compose } from '../application/helpers/functional'
 import { prepare as prepareAlphabet } from '../application/alphabet'
-
-const UIAlphabetInput = ({ alphabet, handleChange }) => (
-  <div className="pc-text-field">
-    <input
-      type="text"
-      id="alphabet-input"
-      className="pc-text-field--input"
-      defaultValue={alphabet}
-      onChange={handleChange}
-    />
-    <label htmlFor="alphabet-input" className="pc-text-field--label">
-      Alphabet
-    </label>
-  </div>
-)
+import TextField from './presentational/TextField'
 
 const AlphabetInput = ({ alphabet, updateAlphabet }) => {
   const handleChange = compose(
@@ -24,7 +10,14 @@ const AlphabetInput = ({ alphabet, updateAlphabet }) => {
     (event) => event.target.value
   )
 
-  return <UIAlphabetInput alphabet={alphabet} handleChange={handleChange} />
+  return (
+    <TextField
+      id="alphabet-input"
+      label="Alphabet"
+      defaultValue={alphabet}
+      handleChange={handleChange}
+    />
+  )
 }
 
 export default AlphabetInput
