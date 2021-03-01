@@ -1,31 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import LetterCounter from './LetterCounter'
 import {
   prepareForValidating as prepareSentence,
   countAllLetters,
 } from '../application/pangram'
 
-class Validator extends Component {
-  renderLetterCounter = ({ letter, occurrences }) => (
-    <LetterCounter
-      letter={letter}
-      occurrences={occurrences}
-      key={`letter-${letter}`}
-    />
+const renderLetterCounter = ({ letter, occurrences }) => (
+  <LetterCounter
+    letter={letter}
+    occurrences={occurrences}
+    key={`letter-${letter}`}
+  />
+)
+
+const Validator = ({ alphabet, sentence }) => {
+  const lowercaseSentence = prepareSentence(sentence)
+  const countedLetters = countAllLetters(alphabet, lowercaseSentence)
+
+  return (
+    <ul className="pc-counters-list">
+      {countedLetters.map(renderLetterCounter)}
+    </ul>
   )
-
-  render() {
-    const { alphabet, sentence } = this.props
-
-    const lowercaseSentence = prepareSentence(sentence)
-    const countedLetters = countAllLetters(alphabet, lowercaseSentence)
-
-    return (
-      <ul className="pc-counters-list">
-        {countedLetters.map(this.renderLetterCounter)}
-      </ul>
-    )
-  }
 }
 
 export default Validator
