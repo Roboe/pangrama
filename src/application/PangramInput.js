@@ -1,7 +1,10 @@
 import React from 'react'
-import { pipe } from '../application/helpers/functional'
-import { prepareForShowing as prepareSentence } from '../application/pangram'
-import TextField from './presentational/TextField'
+
+import TextField from '../ui/TextField'
+
+import { pipe } from './helpers/functional'
+
+import { prepareForShowing as prepareSentence } from './pangram'
 
 const PangramInput = ({ sentence, updateSentence }) => {
   const handleChange = pipe(

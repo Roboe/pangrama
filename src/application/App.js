@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+
+import { Structure, Header, Main, Footer } from '../ui/Structure'
+import NewTabLink from '../ui/NewTabLink'
+import Emoji from '../ui/Emoji'
+
 import AlphabetInput from './AlphabetInput'
 import PangramInput from './PangramInput'
 import Validator from './Validator'
-import { Structure, Header, Main, Footer } from './presentational/Structure'
-import NewTabLink from './presentational/NewTabLink'
-import Emoji from './presentational/Emoji'
 
 const defaultAlphabet = 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
 const defaultSentence =

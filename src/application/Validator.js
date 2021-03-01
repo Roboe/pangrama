@@ -1,9 +1,11 @@
 import React from 'react'
-import CountersList from './presentational/CountersList'
+
+import CountersList from '../ui/CountersList'
+
 import {
   prepareForValidating as prepareSentence,
   countAllLetters,
-} from '../application/pangram'
+} from './pangram'
 
 const Validator = ({ alphabet, sentence }) => {
   const lowercaseSentence = prepareSentence(sentence)

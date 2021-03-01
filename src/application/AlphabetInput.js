@@ -1,7 +1,10 @@
 import React from 'react'
-import { pipe } from '../application/helpers/functional'
-import { prepare as prepareAlphabet } from '../application/alphabet'
-import TextField from './presentational/TextField'
+
+import TextField from '../ui/TextField'
+
+import { pipe } from './helpers/functional'
+
+import { prepare as prepareAlphabet } from './alphabet'
 
 const AlphabetInput = ({ alphabet, updateAlphabet }) => {
   const handleChange = pipe(
