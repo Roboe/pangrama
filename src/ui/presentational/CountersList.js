@@ -16,4 +16,12 @@ const LetterCounter = ({ letter, occurrences }) => (
   </li>
 )
 
-export default LetterCounter
+const CountersList = ({ results }) => (
+  <ul className="pc-counters-list">
+    {results.map(({ letter, occurrences }) => (
+      <LetterCounter letter={letter} occurrences={occurrences} key={letter} />
+    ))}
+  </ul>
+)
+
+export default CountersList
