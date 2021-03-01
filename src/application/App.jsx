@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { Structure, Header, Main, Footer } from '../ui/Structure'
 import NewTabLink from '../ui/NewTabLink'

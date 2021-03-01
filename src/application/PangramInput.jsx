@@ -1,5 +1,3 @@
-import React from 'react'
-
 import TextField from '../ui/TextField'
 
 import { pipe } from './helpers/functional'

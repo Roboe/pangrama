@@ -1,5 +1,3 @@
-import React from 'react'
-
 import CountersList from '../ui/CountersList'
 
 import {

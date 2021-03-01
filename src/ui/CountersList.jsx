@@ -1,5 +1,3 @@
-import React from 'react'
-
 function getValidationClass(letterOccurrences) {
   const valuation = letterOccurrences > 0 ? 'pass' : 'fail'
   return `pc-letter-counter_${valuation}`

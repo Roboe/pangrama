@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const Header = ({ title }) => (
   <header className="pc-header">
     <span className="pc-header--title">{title}</span>

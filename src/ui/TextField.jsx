@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TextField = ({ id, defaultValue, handleChange, label, ...props }) => (
   <div className="pc-text-field">
     <input
