@@ -21,6 +21,27 @@ const App = () => {
       header={<Header title="Pangram Checker" />}
       main={
         <Main
+          intro={
+            <>
+              <p>
+                Pangram Checker te ayuda a crear pangramas originales o a
+                comprobar si un pangrama es válido. Un pangrama es{' '}
+                <q>
+                  un texto que usa todas las letras posibles del alfabeto de un
+                  idioma
+                </q>{' '}
+                (
+                <NewTabLink url="https://es.wikipedia.org/wiki/Pangrama">
+                  Wikipedia
+                </NewTabLink>
+                ).
+              </p>
+              <p>
+                Escribe el alfabeto del idioma que prefieras y comienza a dar
+                forma a tus propios pangramas.
+              </p>
+            </>
+          }
           sections={[
             <>
               <AlphabetInput

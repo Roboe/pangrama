@@ -4,8 +4,11 @@ export const Header = ({ title }) => (
   </header>
 )
 
-export const Main = ({ sections }) => (
+export const Main = ({ intro, sections }) => (
   <main className="pc-main">
+    <section className="pc-main--section pc-main--section_intro">
+      {intro}
+    </section>
     {sections.map((section, index) => (
       <section key={index} className="pc-main--section">
         {section}
