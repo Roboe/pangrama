@@ -61,7 +61,7 @@ const App = () => {
         <Footer
           credits={
             <>
-              Made by{' '}
+              Hecho por{' '}
               <NewTabLink url="http://virgulilla.com">@RoboePi</NewTabLink>{' '}
               <Emoji emoji="&#x1f989;" label="Owl" />
             </>
@@ -69,7 +69,7 @@ const App = () => {
           license={
             <>
               <NewTabLink url="https://github.com/Roboe/pangrama">
-                Source
+                Código fuente
               </NewTabLink>{' '}
               (GPLv3)
             </>
