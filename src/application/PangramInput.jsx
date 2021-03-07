@@ -15,6 +15,8 @@ const PangramInput = ({ sentence, updateSentence }) => {
     <TextField
       id="pangram-input"
       label="Pangram"
+      isMultiline
+      rows={3}
       defaultValue={sentence}
       handleChange={handleChange}
     />
