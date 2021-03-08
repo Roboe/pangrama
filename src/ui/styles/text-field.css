@@ -28,6 +28,17 @@
   color: #fafafa;
   background-color: #a98274;
 }
+.pc-text-field--button {
+  border: 0;
+  white-space: nowrap;
+  background-color: #795548;
+  color: #fafafa;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+.pc-text-field--button:active {
+  background-color: #a98274;
+}
 
 
 /*
@@ -35,15 +46,24 @@
   HTML order (<input> then <label>)
   is reversed with CSS order property
 */
-.pc-text-field {
+.pc-text-field_with-label {
   display: flex;
   flex-direction: column;
 }
-.pc-text-field--input {
+.pc-text-field_with-label .pc-text-field--input {
   order: 2;
 }
-.pc-text-field--label {
+.pc-text-field_with-label .pc-text-field--label {
   order: 1;
+}
+
+
+/*
+  With an action button on the right
+*/
+.pc-text-field_with-action {
+  display: flex;
+  flex-direction: row;
 }
 
 

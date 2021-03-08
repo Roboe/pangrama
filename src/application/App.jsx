@@ -8,6 +8,7 @@ import { readFromSearchParams } from './searchParams'
 import AlphabetInput from './AlphabetInput'
 import PangramInput from './PangramInput'
 import Validator from './Validator'
+import Share from './Share'
 
 const defaultAlphabet = 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
 const defaultSentence =
@@ -60,6 +61,15 @@ const App = () => {
               />
             </>,
             <Validator alphabet={alphabet} sentence={sentence} />,
+            <>
+              <p>
+                Cuando termines, puedes compartir tu pangrama o guardarlo en tus
+                marcadores utilizando esta dirección:
+              </p>
+              <Share alphabet={alphabet} sentence={sentence}>
+                Copiar <Emoji emoji="&#x1f4cb;" label="Portapapeles" />
+              </Share>
+            </>,
           ]}
         />
       }

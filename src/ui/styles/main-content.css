@@ -12,9 +12,13 @@
   justify-content: space-around;
   align-items: center;
 }
-.pc-main--section_intro {
-  margin-bottom: 0;
 
+.pc-main--section p {
+  width: 100%;
   line-height: 1.65em;
   text-align: justify;
+}
+
+.pc-main--section_intro {
+  margin-bottom: 0;
 }

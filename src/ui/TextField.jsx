@@ -16,7 +16,7 @@ const TextField = ({
   }
 
   return (
-    <div className="pc-text-field">
+    <div className="pc-text-field pc-text-field_with-label">
       <Component
         type="text"
         ref={inputRef}
