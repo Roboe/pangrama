@@ -14,7 +14,7 @@ const PangramInput = ({ sentence, updateSentence }) => {
   return (
     <TextField
       id="pangram-input"
-      label="Pangram"
+      label="Pangrama"
       isMultiline
       rows={3}
       defaultValue={sentence}

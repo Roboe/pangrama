@@ -14,7 +14,7 @@ const AlphabetInput = ({ alphabet, updateAlphabet }) => {
   return (
     <TextField
       id="alphabet-input"
-      label="Alphabet"
+      label="Alfabeto"
       defaultValue={alphabet}
       handleChange={handleChange}
     />
