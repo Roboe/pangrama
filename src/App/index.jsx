@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { useState, useMemo } from 'react'
+import { useTranslation, Trans } from 'react-i18next'
 
 import { readFromSearchParams } from '../browser/searchParams'
 import Emoji from '../uikit/Emoji'
@@ -21,6 +22,8 @@ const defaultSentence =
   'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.'
 
 const App = () => {
+  const { t } = useTranslation()
+
   const searchParams = window.location.search
   const { a, p } = useMemo(
     () => readFromSearchParams(searchParams),
@@ -33,29 +36,22 @@ const App = () => {
   return (
     <Layout
       header={
-        <Layout.Header title="Pangram Checker" link={window.location.origin} />
+        <Layout.Header title={t('appName')} link={window.location.origin} />
       }
       main={
         <Layout.Main
           intro={
             <>
               <p>
-                Pangram Checker te ayuda a crear pangramas originales o a
-                comprobar si un pangrama es válido. Un pangrama es{' '}
-                <q>
-                  un texto que usa todas las letras posibles del alfabeto de un
-                  idioma
-                </q>{' '}
-                (
-                <NewTabLink url="https://es.wikipedia.org/wiki/Pangrama">
-                  Wikipedia
-                </NewTabLink>
-                ).
+                <Trans
+                  i18nKey="main.intro"
+                  components={{
+                    quote: <q />,
+                    url: <NewTabLink url={t('main.pangramUrl')} />,
+                  }}
+                />
               </p>
-              <p>
-                Escribe el alfabeto del idioma que prefieras y comienza a dar
-                forma a tus propios pangramas.
-              </p>
+              <p>{t('main.instructions')}</p>
             </>
           }
           sections={[
@@ -85,19 +81,21 @@ const App = () => {
       footer={
         <Layout.Footer
           credits={
-            <>
-              Hecho por{' '}
-              <NewTabLink url="https://virgulilla.com">Roboe</NewTabLink>{' '}
-              <Emoji emoji="&#x1f989;" label="Búho" />
-            </>
+            <Trans
+              i18nKey="footer.credits"
+              components={{
+                url: <NewTabLink url="https://virgulilla.com" />,
+                emoji: <Emoji emoji="&#x1f989;" label={t('emoji.owl')} />,
+              }}
+            />
           }
           license={
-            <>
-              <NewTabLink url="https://gitlab.com/Roboe/pangrama">
-                Código fuente
-              </NewTabLink>{' '}
-              (GPLv3)
-            </>
+            <Trans
+              i18nKey="footer.license"
+              components={{
+                url: <NewTabLink url="https://github.com/Roboe/pangrama" />,
+              }}
+            />
           }
         />
       }

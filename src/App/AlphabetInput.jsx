@@ -2,11 +2,15 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import { useTranslation } from 'react-i18next'
+
 import { prepare as prepareAlphabet } from '../core/alphabet'
 import { pipe } from '../libs/functional'
 import LabeledTextField from '../uikit/LabeledTextField'
 
 const AlphabetInput = ({ alphabet, updateAlphabet }) => {
+  const { t } = useTranslation()
+
   const handleChange = pipe(
     (event) => event.target.value,
     prepareAlphabet,
@@ -15,7 +19,7 @@ const AlphabetInput = ({ alphabet, updateAlphabet }) => {
 
   return (
     <LabeledTextField
-      label="Alfabeto"
+      label={t('alphabet')}
       inputProps={{
         id: 'alphabet-input',
         defaultValue: alphabet,

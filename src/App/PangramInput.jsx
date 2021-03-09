@@ -2,11 +2,15 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import { useTranslation } from 'react-i18next'
+
 import { pipe } from '../libs/functional'
 import { prepareForShowing as prepareSentence } from '../core/pangram'
 import LabeledTextField from '../uikit/LabeledTextField'
 
 const PangramInput = ({ sentence, updateSentence }) => {
+  const { t } = useTranslation()
+
   const handleChange = pipe(
     (event) => event.target.value,
     prepareSentence,
@@ -15,7 +19,7 @@ const PangramInput = ({ sentence, updateSentence }) => {
 
   return (
     <LabeledTextField
-      label="Pangrama"
+      label={t('pangram')}
       isMultiline
       inputProps={{
         id: 'pangram-input',
