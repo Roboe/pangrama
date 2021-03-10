@@ -43,8 +43,7 @@
 
 /*
   Workaround to reverse the adjacent sibling selector
-  HTML order (<input> then <label>)
-  is reversed with CSS order property
+  HTML order (<input> then <label>) is visually restored with the CSS order property
 */
 .pc-text-field_with-label {
   display: flex;
