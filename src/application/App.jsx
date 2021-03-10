@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 import { Structure, Header, Main, Footer } from '../ui/Structure'
 import NewTabLink from '../ui/NewTabLink'
 import Emoji from '../ui/Emoji'
+import { readFromSearchParams } from './searchParams'
 
 import AlphabetInput from './AlphabetInput'
 import PangramInput from './PangramInput'
@@ -13,8 +14,13 @@ const defaultSentence =
   'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.'
 
 const App = () => {
-  const [alphabet, updateAlphabet] = useState(defaultAlphabet)
-  const [sentence, updateSentence] = useState(defaultSentence)
+  const searchParams = window.location.search
+  const { a, p } = useMemo(() => readFromSearchParams(searchParams), [
+    searchParams,
+  ])
+
+  const [alphabet, updateAlphabet] = useState(a ?? defaultAlphabet)
+  const [sentence, updateSentence] = useState(p ?? defaultSentence)
 
   return (
     <Structure
