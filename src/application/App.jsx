@@ -63,7 +63,7 @@ const App = () => {
             <>
               Hecho por{' '}
               <NewTabLink url="http://virgulilla.com">@RoboePi</NewTabLink>{' '}
-              <Emoji emoji="&#x1f989;" label="Owl" />
+              <Emoji emoji="&#x1f989;" label="Búho" />
             </>
           }
           license={
