@@ -3,11 +3,11 @@ import { reverse } from './helpers/string'
 
 // FROM: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 //
-// We don't use !~*'() because they might be cut from automatic URL detectors
+// We don't use .-_!~*'() because they might be cut from automatic URL detectors
 // (for example, when sharing on messaging applications, forums, etc.) or
 // confused as Markdown formatting ¯\_(ツ)_/¯
 const URLSAFE_ALPHABET =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.'
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 export const changeBase = (fromDigits, fromBase, toBase) => {
   // 1. Transform our number into a BigInt
