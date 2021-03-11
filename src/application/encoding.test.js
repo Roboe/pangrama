@@ -12,10 +12,10 @@ const PLAIN_ALPHABET = 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
 const PLAIN_SENTENCE =
   'El vikingo farfulló: ¡Carámbanos! ¿Quién dijo que Zambia existiría? ¡Sin pingüinos, ñus ni hielo! Tú, un whisky.'
 
-const ENCODED_A =
+const ENCODED_BASE =
   'B9GRdylJO0u60LAZRJqD0-RrVHrArTcqPOV_RNp8SxynHlRaCyp_Lr9sXNccsrWlC04fDW-cTeZ'
-const ENCODED_B = 'AMXolWZb-yGxWvg8.CX0UHP-5JGOO1'
-const ENCODED_C =
+const ENCODED_ALPHABET = 'AMXolWZb-yGxWvg8.CX0UHP-5JGOO1'
+const ENCODED_SENTENCE =
   'CfkFKG0uK7j-k9u8y5FuRDbewGFWK5TinRhHE89sml6ve7m9Q8aIdRt1ztyA.c9l-1_0yKG-XGhyzpAsf3mO1TaAstDr27XzrbL3DKc7'
 
 const OLD_FORMAT_URL_PARAMS =
@@ -80,25 +80,25 @@ describe('btoaSafe/Atob', () => {
 describe('encode/decode', () => {
   it('Encodes correctly', () => {
     expect(encode(PLAIN_ALPHABET, PLAIN_SENTENCE)).toEqual({
-      a: ENCODED_A,
-      b: ENCODED_B,
-      c: ENCODED_C,
+      base: ENCODED_BASE,
+      alphabet: ENCODED_ALPHABET,
+      sentence: ENCODED_SENTENCE,
     })
   })
 
   it('Decodes correctly', () => {
-    expect(decode(ENCODED_A, ENCODED_B, ENCODED_C)).toEqual({
+    expect(decode(ENCODED_BASE, ENCODED_ALPHABET, ENCODED_SENTENCE)).toEqual({
       alphabet: PLAIN_ALPHABET,
       sentence: PLAIN_SENTENCE,
     })
   })
 
   it('Is more efficient than the old method', () => {
-    const { a, b, c } = encode(PLAIN_ALPHABET, PLAIN_SENTENCE)
+    const { base, alphabet, sentence } = encode(PLAIN_ALPHABET, PLAIN_SENTENCE)
 
-    const urlParams = `a=${a}&b=${b}&c=${c}`
+    const urlParams = `b=${base}&a=${alphabet}&s=${sentence}&v=2`
     const lengthRatio = urlParams.length / OLD_FORMAT_URL_PARAMS.length
 
-    expect(lengthRatio).toEqual(0.5977961432506887) // Quite the weight loss!
+    expect(lengthRatio).toEqual(0.6088154269972452) // Quite the weight loss!
   })
 })

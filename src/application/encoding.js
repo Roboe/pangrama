@@ -62,29 +62,26 @@ export const atobSafe = (string) =>
 // These are the only public functions that should be `export`ed,
 // but I still wanted to unit-test everything else
 export const encode = (alphabet, sentence) => {
-  const uniqueAlphabet = [...new Set([...alphabet, ...sentence])]
-  const alphabetIndexed = alphabet
-    .split('')
-    .map((x) => uniqueAlphabet.indexOf(x))
-  const indexedSentence = sentence
-    .split('')
-    .map((x) => uniqueAlphabet.indexOf(x))
+  const base = [...new Set([...alphabet, ...sentence])]
 
-  const a = btoaSafe(uniqueAlphabet.join(''))
-  const b = toUrlSafe(alphabetIndexed, uniqueAlphabet.length)
-  const c = toUrlSafe(indexedSentence, uniqueAlphabet.length)
+  const intAlphabet = alphabet.split('').map((x) => base.indexOf(x))
+  const intSentence = sentence.split('').map((x) => base.indexOf(x))
 
-  return { a, b, c }
+  return {
+    base: btoaSafe(base.join('')),
+    alphabet: toUrlSafe(intAlphabet, base.length),
+    sentence: toUrlSafe(intSentence, base.length),
+  }
 }
 
-export const decode = (a, b, c) => {
-  const uniqueAlphabet = atobSafe(a).split('')
+export const decode = (encodedBase, encodedAlphabet, encodedSentence) => {
+  const base = atobSafe(encodedBase).split('')
 
-  const alphabet = fromUrlSafe(b, uniqueAlphabet.length)
-    .map((x) => uniqueAlphabet[x])
+  const alphabet = fromUrlSafe(encodedAlphabet, base.length)
+    .map((x) => base[x])
     .join('')
-  const sentence = fromUrlSafe(c, uniqueAlphabet.length)
-    .map((x) => uniqueAlphabet[x])
+  const sentence = fromUrlSafe(encodedSentence, base.length)
+    .map((x) => base[x])
     .join('')
 
   return { alphabet, sentence }
