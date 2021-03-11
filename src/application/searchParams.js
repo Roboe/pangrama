@@ -10,9 +10,9 @@ export const readFromSearchParams = (searchParams) => {
 
   switch (version) {
     case '2': {
-      const b = search.get('b')
-      const a = search.get('a')
-      const s = search.get('s')
+      const b = search.get('b') ?? ''
+      const a = search.get('a') ?? ''
+      const s = search.get('s') ?? ''
 
       const decoded = decode(b, a, s)
 
@@ -40,9 +40,15 @@ export const writeSearchParamsToUrl = (origin, alphabet, sentence) => {
 
   const encoded = encode(alphabet, sentence)
 
-  url.searchParams.append('b', encoded.base)
-  url.searchParams.append('a', encoded.alphabet)
-  url.searchParams.append('s', encoded.sentence)
+  if (encoded?.base.length > 0) {
+    url.searchParams.append('b', encoded.base)
+  }
+  if (encoded?.alphabet.length > 0) {
+    url.searchParams.append('a', encoded.alphabet)
+  }
+  if (encoded?.sentence.length > 0) {
+    url.searchParams.append('s', encoded.sentence)
+  }
   url.searchParams.append('v', '2')
 
   return url

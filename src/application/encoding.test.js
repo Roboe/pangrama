@@ -78,18 +78,86 @@ describe('btoaSafe/Atob', () => {
 })
 
 describe('encode/decode', () => {
-  it('Encodes correctly', () => {
-    expect(encode(PLAIN_ALPHABET, PLAIN_SENTENCE)).toEqual({
-      base: ENCODED_BASE,
-      alphabet: ENCODED_ALPHABET,
-      sentence: ENCODED_SENTENCE,
+  describe('encode', () => {
+    it('Works', () => {
+      expect(encode(PLAIN_ALPHABET, PLAIN_SENTENCE)).toEqual({
+        base: ENCODED_BASE,
+        alphabet: ENCODED_ALPHABET,
+        sentence: ENCODED_SENTENCE,
+      })
+    })
+
+    it('Allows an empty alphabet', () => {
+      const result = encode('', PLAIN_SENTENCE)
+
+      expect(result.base).toBeDefined()
+      expect(result.alphabet).toEqual('')
+      expect(result.sentence).toBeDefined()
+    })
+
+    it('Allows an empty sentence', () => {
+      const result = encode(PLAIN_ALPHABET, '')
+
+      expect(result.base).toBeDefined()
+      expect(result.alphabet).toBeDefined()
+      expect(result.sentence).toEqual('')
+    })
+
+    it('Allows both empty alphabet and sentence', () => {
+      const result = encode('', '')
+
+      expect(result.base).toEqual('')
+      expect(result.alphabet).toEqual('')
+      expect(result.sentence).toEqual('')
     })
   })
 
-  it('Decodes correctly', () => {
-    expect(decode(ENCODED_BASE, ENCODED_ALPHABET, ENCODED_SENTENCE)).toEqual({
-      alphabet: PLAIN_ALPHABET,
-      sentence: PLAIN_SENTENCE,
+  describe('decode', () => {
+    it('Works', () => {
+      expect(decode(ENCODED_BASE, ENCODED_ALPHABET, ENCODED_SENTENCE)).toEqual({
+        alphabet: PLAIN_ALPHABET,
+        sentence: PLAIN_SENTENCE,
+      })
+    })
+
+    it('Allows an empty alphabet', () => {
+      const result = decode(ENCODED_BASE, '', ENCODED_SENTENCE)
+
+      expect(result.alphabet).toEqual('')
+      expect(result.sentence).toBeDefined()
+    })
+
+    it('Allows an empty sentence', () => {
+      const result = decode(ENCODED_BASE, ENCODED_ALPHABET, '')
+
+      expect(result.alphabet).toBeDefined()
+      expect(result.sentence).toEqual('')
+    })
+
+    it('Allows both empty alphabet and sentence', () => {
+      const result = decode(ENCODED_BASE, '', '')
+
+      expect(result.alphabet).toEqual('')
+      expect(result.sentence).toEqual('')
+    })
+
+    it('Allows all empty base, alphabet and sentence', () => {
+      const result = decode('', '', '')
+
+      expect(result.alphabet).toEqual('')
+      expect(result.sentence).toEqual('')
+    })
+
+    it('Throws on empty base with data', () => {
+      expect(() => {
+        decode('', ENCODED_ALPHABET, ENCODED_SENTENCE)
+      }).toThrow()
+    })
+
+    it('Throws on nonsensical base', () => {
+      expect(() => {
+        decode('!!!€€', ENCODED_ALPHABET, ENCODED_SENTENCE)
+      }).toThrow()
     })
   })
 
