@@ -84,7 +84,7 @@ const App = () => {
           }
           license={
             <>
-              <NewTabLink url="https://github.com/Roboe/pangrama">
+              <NewTabLink url="https://gitlab.com/Roboe/pangrama">
                 Código fuente
               </NewTabLink>{' '}
               (GPLv3)
