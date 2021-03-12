@@ -18,8 +18,8 @@ const ENCODED_ALPHABET = 'AuaTZe9Ax7qrVczdWCEm0SBBCm58EQ'
 const ENCODED_SENTENCE =
   'FM7EO4Z1BL4acq8kxEKZ2l7VfzTEaFjjByP4Vym99TnaatwVaTZBA4Z9oznz6qg5D65skYfKj34jEtomiF5Pnd7bAUFTj0lOBu0ixWuiM'
 
-const OLD_FORMAT_URL_PARAMS =
-  'a=YSVDMyVBMWJjZGUlQzMlQTlmZ2hpJUMzJUFEamtsbW4lQzMlQjFvJUMzJUIzcHFyc3R1JUMzJUJBJUMzJUJDdnd4eXo%3D&p=UXUlQzMlQTklMjBleHRyYW9yZGluYXJpYXMlMjBzZXIlQzMlQURhbiUyMGFtYmFzJTIwZnVuY2lvbmFsaWRhZGVzLiUyMFBlcnRpbmF6JTIwbWUlMjB2ZXIlQzMlQTklMjBhYmFsYW56JUMzJUExbmRvbWUlMjBjdWFsJTIwcGVkaWclQzMlQkNlJUMzJUIxbyUyMGVtJUMzJUJBJTIwYWwlMjBqYW0lQzMlQjNuJTIweSUyMGFsJTIwd2hpc2t5Lg%3D%3D'
+const OLD_FORMAT_SEARCH_PARAMS =
+  '?a=YSVDMyVBMWJjZGUlQzMlQTlmZ2hpJUMzJUFEamtsbW4lQzMlQjFvJUMzJUIzcHFyc3R1JUMzJUJBJUMzJUJDdnd4eXo%3D&p=RWwlMjB2aWtpbmdvJTIwZmFyZnVsbCVDMyVCMyUzQSUyMCVDMiVBMUNhciVDMyVBMW1iYW5vcyElMjAlQzIlQkZRdWklQzMlQTluJTIwZGlqbyUyMHF1ZSUyMFphbWJpYSUyMGV4aXN0aXIlQzMlQURhJTNGJTIwJUMyJUExU2luJTIwcGluZyVDMyVCQ2lub3MlMkMlMjAlQzMlQjF1cyUyMG5pJTIwaGllbG8hJTIwVCVDMyVCQSUyQyUyMHVuJTIwd2hpc2t5Lg%3D%3D'
 
 describe('changeBase', () => {
   it('Works', () => {
@@ -164,9 +164,9 @@ describe('encode/decode', () => {
   it('Is more efficient than the old method', () => {
     const { base, alphabet, sentence } = encode(PLAIN_ALPHABET, PLAIN_SENTENCE)
 
-    const urlParams = `b=${base}&a=${alphabet}&s=${sentence}&v=2`
-    const lengthRatio = urlParams.length / OLD_FORMAT_URL_PARAMS.length
+    const searchParams = `?b=${base}&a=${alphabet}&s=${sentence}&v=2`
+    const lengthRatio = searchParams.length / OLD_FORMAT_SEARCH_PARAMS.length
 
-    expect(lengthRatio).toEqual(0.6143250688705234) // Quite the weight loss!
+    expect(lengthRatio).toEqual(0.5957446808510638) // Quite the weight loss!
   })
 })
