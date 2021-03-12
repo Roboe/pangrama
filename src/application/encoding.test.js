@@ -148,16 +148,89 @@ describe('encode/decode', () => {
       expect(result.sentence).toEqual('')
     })
 
-    it('Throws on empty base with data', () => {
-      expect(() => {
-        decode('', ENCODED_ALPHABET, ENCODED_SENTENCE)
-      }).toThrow()
-    })
+    describe('Error handling', () => {
+      let originalError
 
-    it('Throws on nonsensical base', () => {
-      expect(() => {
-        decode('!!!€€', ENCODED_ALPHABET, ENCODED_SENTENCE)
-      }).toThrow()
+      beforeEach(() => {
+        originalError = console.error
+        console.error = jest.fn()
+      })
+
+      afterEach(() => {
+        console.error = originalError
+      })
+
+      it('Returns both undefined on empty base', () => {
+        expect(decode('', ENCODED_ALPHABET, ENCODED_SENTENCE)).toEqual({
+          alphabet: undefined,
+          sentence: undefined,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
+
+      it('Returns both undefined on nonsensical base', () => {
+        expect(decode('!!!€€', ENCODED_ALPHABET, ENCODED_SENTENCE)).toEqual({
+          alphabet: undefined,
+          sentence: undefined,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
+
+      it('Return undefined alphabet on nonsensical data', () => {
+        expect(decode(ENCODED_BASE, '€€€€', ENCODED_SENTENCE)).toEqual({
+          alphabet: undefined,
+          sentence: PLAIN_SENTENCE,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
+
+      it('Return undefined sentence on nonsensical data', () => {
+        expect(decode(ENCODED_BASE, ENCODED_ALPHABET, '€€€€')).toEqual({
+          alphabet: PLAIN_ALPHABET,
+          sentence: undefined,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
+
+      it('Return both undefined on nonsensical data', () => {
+        expect(decode(ENCODED_BASE, '€€€€', '€€€€')).toEqual({
+          alphabet: undefined,
+          sentence: undefined,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
+
+      it('Returns both undefined on undefined base', () => {
+        expect(decode(undefined, ENCODED_ALPHABET, ENCODED_SENTENCE)).toEqual({
+          alphabet: undefined,
+          sentence: undefined,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
+
+      it('Return undefined alphabet on undefined data', () => {
+        expect(decode(ENCODED_BASE, undefined, ENCODED_SENTENCE)).toEqual({
+          alphabet: undefined,
+          sentence: PLAIN_SENTENCE,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
+
+      it('Return undefined sentence on undefined data', () => {
+        expect(decode(ENCODED_BASE, ENCODED_ALPHABET, undefined)).toEqual({
+          alphabet: PLAIN_ALPHABET,
+          sentence: undefined,
+        })
+
+        expect(console.error).toHaveBeenCalled()
+      })
     })
   })
 

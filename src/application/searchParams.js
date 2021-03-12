@@ -10,9 +10,9 @@ export const readFromSearchParams = (searchParams) => {
 
   switch (version) {
     case '2': {
-      const b = search.get('b') ?? ''
-      const a = search.get('a') ?? ''
-      const s = search.get('s') ?? ''
+      const b = search.get('b')
+      const a = search.get('a')
+      const s = search.get('s')
 
       const decoded = decode(b, a, s)
 
