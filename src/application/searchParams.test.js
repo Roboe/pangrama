@@ -100,4 +100,40 @@ describe('No version', () => {
       p: PLAIN_SENTENCE,
     })
   })
+
+  it('Support missing alphabet', () => {
+    const searchParams = `?p=${V1_ENCODED_SENTENCE}`
+
+    expect(readFromSearchParams(searchParams)).toEqual({
+      a: undefined,
+      p: PLAIN_SENTENCE,
+    })
+  })
+
+  it('Support empty alphabet', () => {
+    const searchParams = `?a=&p=${V1_ENCODED_SENTENCE}`
+
+    expect(readFromSearchParams(searchParams)).toEqual({
+      a: undefined,
+      p: PLAIN_SENTENCE,
+    })
+  })
+
+  it('Support missing sentence', () => {
+    const searchParams = `?a=${V1_ENCODED_ALPHABET}`
+
+    expect(readFromSearchParams(searchParams)).toEqual({
+      a: PLAIN_ALPHABET,
+      p: undefined,
+    })
+  })
+
+  it('Support empty sentence', () => {
+    const searchParams = `?a=${V1_ENCODED_ALPHABET}&p=`
+
+    expect(readFromSearchParams(searchParams)).toEqual({
+      a: PLAIN_ALPHABET,
+      p: undefined,
+    })
+  })
 })
