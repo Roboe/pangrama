@@ -1,4 +1,5 @@
 import { takeWhile } from './helpers/array'
+import { deduplicate } from './helpers/string'
 
 // FROM: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 //
@@ -64,13 +65,13 @@ export const atobSafe = (string) =>
 // These are the only public functions that should be `export`ed,
 // but I still wanted to unit-test everything else
 export const encode = (alphabet, sentence) => {
-  const base = [...new Set([...alphabet, ...sentence])]
+  const base = deduplicate([...alphabet, ...sentence])
 
   const intAlphabet = alphabet.split('').map((x) => base.indexOf(x))
   const intSentence = sentence.split('').map((x) => base.indexOf(x))
 
   return {
-    base: btoaSafe(base.join('')),
+    base: btoaSafe(base),
     alphabet: toUrlSafe(intAlphabet, base.length),
     sentence: toUrlSafe(intSentence, base.length),
   }
