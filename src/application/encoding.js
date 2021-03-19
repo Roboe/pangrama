@@ -1,5 +1,4 @@
 import { takeWhile } from './helpers/array'
-import { reverse } from './helpers/string'
 
 // FROM: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 //
@@ -12,10 +11,10 @@ const URLSAFE_ALPHABET =
 export const changeBase = (fromDigits, fromBase, toBase) => {
   // 1. Transform our number into a BigInt
   const fromBaseN = BigInt(fromBase)
-  const bigint = reverse(fromDigits).reduce(
-    (acc, digit, i) => acc + BigInt(digit) * fromBaseN ** BigInt(i),
-    0n,
-  )
+  const bigint = fromDigits.reduce((acc, digit, i, digits) => {
+    const numberIndexN = BigInt(digits.length - 1 - i)
+    return acc + BigInt(digit) * fromBaseN ** numberIndexN
+  }, 0n)
 
   // 2. Transform the BigInt into our destination base
   const toBaseN = BigInt(toBase)
@@ -23,14 +22,14 @@ export const changeBase = (fromDigits, fromBase, toBase) => {
 
   let value = bigint
   while (value > 0n) {
-    result.push(Number(value % toBaseN))
+    result.unshift(Number(value % toBaseN))
     value /= toBaseN
   }
 
   // 3. Make sure we preserve leading zeroes
   const leadingZeros = takeWhile(fromDigits, (digit) => digit === 0)
 
-  return [...leadingZeros, ...reverse(result)]
+  return [...leadingZeros, ...result]
 }
 
 export const toUrlSafe = (plain, plainBase) =>
