@@ -41,7 +41,7 @@ export const toUrlSafe = (plain, plainBase) =>
     .join('')
 
 export const fromUrlSafe = (encoded, plainBase) => {
-  const encodedInts = encoded.split('').map((x) => URLSAFE_ALPHABET.indexOf(x))
+  const encodedInts = [...encoded].map((x) => URLSAFE_ALPHABET.indexOf(x))
 
   if (!encodedInts.every((x) => x >= 0 && x < URLSAFE_ALPHABET.length)) {
     throw new Error('Invalid encoding')
@@ -67,8 +67,8 @@ export const atobSafe = (string) =>
 export const encode = (alphabet, sentence) => {
   const base = deduplicate([...alphabet, ...sentence])
 
-  const intAlphabet = alphabet.split('').map((x) => base.indexOf(x))
-  const intSentence = sentence.split('').map((x) => base.indexOf(x))
+  const intAlphabet = [...alphabet].map((x) => base.indexOf(x))
+  const intSentence = [...sentence].map((x) => base.indexOf(x))
 
   return {
     base: btoaSafe(base),
@@ -81,7 +81,7 @@ export const decode = (encodedBase, encodedAlphabet, encodedSentence) => {
   let base, alphabet, sentence
 
   try {
-    base = atobSafe(encodedBase).split('')
+    base = [...atobSafe(encodedBase)]
   } catch (err) {
     console.error('Could not parse base', err)
 
