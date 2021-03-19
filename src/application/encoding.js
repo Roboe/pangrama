@@ -1,4 +1,4 @@
-import { makeArray } from './helpers/array'
+import { takeWhile } from './helpers/array'
 import { reverse } from './helpers/string'
 
 // FROM: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
@@ -28,12 +28,9 @@ export const changeBase = (fromDigits, fromBase, toBase) => {
   }
 
   // 3. Make sure we preserve leading zeroes
-  let leadingZeros = 0
-  for (let i = 0; fromDigits[i] === 0 && i < fromDigits.length; i++) {
-    leadingZeros++
-  }
+  const leadingZeros = takeWhile(fromDigits, (digit) => digit === 0)
 
-  return [...makeArray(leadingZeros, () => 0), ...reverse(result)]
+  return [...leadingZeros, ...reverse(result)]
 }
 
 export const toUrlSafe = (plain, plainBase) =>
