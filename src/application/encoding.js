@@ -9,14 +9,16 @@ const URLSAFE_ALPHABET =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 export const changeBase = (fromDigits, fromBase, toBase) => {
-  // 1. Transform our number into a BigInt
+  // 1. Transform the digits of our number (radix fromBase) into an intermediate BigInt (radix 10)
   const fromBaseN = BigInt(fromBase)
-  const bigint = fromDigits.reduce((acc, digit, i, digits) => {
-    const numberIndexN = BigInt(digits.length - 1 - i)
-    return acc + BigInt(digit) * fromBaseN ** numberIndexN
+  const bigint = fromDigits.reduce((acc, digit, i, { length }) => {
+    const digitN = BigInt(digit)
+    const numberIndexN = BigInt(length - 1 - i)
+
+    return acc + digitN * fromBaseN ** numberIndexN
   }, 0n)
 
-  // 2. Transform the BigInt into our destination base
+  // 2. Transform the intermediate BigInt (radix 10) into digits of the destination number (radix toBase)
   const toBaseN = BigInt(toBase)
   const result = []
 
