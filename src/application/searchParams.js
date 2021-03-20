@@ -28,8 +28,8 @@ export const readFromSearchParams = (searchParams) => {
       const p = search.get('p')
 
       return {
-        a: a ? oldDecode(a) : undefined,
-        p: p ? oldDecode(p) : undefined,
+        a: a !== null ? oldDecode(a) : undefined,
+        p: p !== null ? oldDecode(p) : undefined,
       }
     }
   }

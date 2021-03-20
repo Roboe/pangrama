@@ -114,7 +114,7 @@ describe('No version', () => {
     const searchParams = `?a=&p=${V1_ENCODED_SENTENCE}`
 
     expect(readFromSearchParams(searchParams)).toEqual({
-      a: undefined,
+      a: '',
       p: PLAIN_SENTENCE,
     })
   })
@@ -133,7 +133,7 @@ describe('No version', () => {
 
     expect(readFromSearchParams(searchParams)).toEqual({
       a: PLAIN_ALPHABET,
-      p: undefined,
+      p: '',
     })
   })
 })
