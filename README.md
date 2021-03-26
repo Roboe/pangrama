@@ -17,7 +17,10 @@ I discovered that well-known sentences like _"The quick brown fox jumps over the
 ## Acknowledgements
 
 [@soyguijarro](http://soyguijarro.com)'s [React recap](http://slides.com/soyguijarro/react/) encouraged me to restart the project in [2017](https://gitlab.com/Roboe/pangrama/commit/0af727129fe70091d86473e2f6e909756381fbb7), this time with Create React App.
+
 [Lenguaraces](https://twitter.com/RoboePi/lists/lenguaraz/members) people made my day by testing and producing some [hilarious pangrams](https://twitter.com/i/moments/855946527730171906) (Spanish) with the web app.
+
+[@alvaro-cuesta](https://github.com/alvaro-cuesta) implemented a more efficient algorithm for sharing URLs, including testing, and improved the feature overall, all with a very empathetic attitude that shows how generous he is.
 
 Thank you!
 
