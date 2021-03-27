@@ -16,7 +16,10 @@ export const changeBase = (fromDigits, fromBase, toBase) => {
     const digitN = BigInt(digit)
     const numberIndexN = BigInt(length - 1 - i)
 
-    return acc + digitN * fromBaseN ** numberIndexN
+    // Avoid Babel transpiling ** to Math.pow(), which doesn't work with BigInt
+    // https://babeljs.io/docs/en/babel-plugin-transform-exponentiation-operator
+    // Probably bailouts JIT optimization, but it's faster than manual exponentiation anyway
+    return acc + digitN * eval('fromBaseN ** numberIndexN')
   }, 0n)
 
   // 2. Transform the intermediate BigInt (radix 10) into digits of the destination number (radix toBase)
