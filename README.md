@@ -3,6 +3,11 @@ Pangram Checker
 
 Pangram Checker helps you produce pristine new pangrams — or check whether a pangram is valid. A pangram is _"a sentence using every letter of a given alphabet at least once"_ ([Wikipedia](https://en.wikipedia.org/wiki/Pangram)). Type the alphabet of a language and start giving shape to your pangrams.
 
+Quick links:
+- Start writing a pangram in Spanish: [with](https://pangrama.virgulilla.com/?b=INg457J9I4vhrNrmI00gpzhAoK8Bb4NYmaCVBwT1hdkfRue5ut1rI2&a=ADJXNdoLrjNHMP81c73camPtdz0k&s=&v=2) or [without](https://pangrama.virgulilla.com/?b=E5Ys70tRJ0wQdZm0FVyPrsoDZRzPb3xXtZZ2qO&a=A5tgGYP4CGq7lxUZ3eo0B&s=&v=2) diacritics.
+- Start writing a pangram in Catalan: [with](https://pangrama.virgulilla.com/?b=Kk1qzBGQM3MaqnaQl5mkpXOPhtfzy33fzoyn0bKfflic1WsVMpxSAoJS0YFlxw&a=AJGo3FXLZd6GWh2piRL9K0CcjKhx611&s=&v=2) or [without](https://pangrama.virgulilla.com/?b=E5YtCFzoiHv5YW8Cvl32AhcA3aLM8l652XGNOi&a=A5tgGYP4CGq7lxUZ3eo0B&v=2) diacritics.
+- Start writing a pangram in [English](https://pangrama.virgulilla.com/?b=R4l7cQNDpCcg2VoQL5SCZAxMbGUj5Ot3vK6&a=A1ueHbYTCT3U8WB0cd6F&s=&v=2).
+
 
 ## Technology & Design
 
