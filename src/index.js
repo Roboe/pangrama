@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 
-import unregister from './infrastructure/registerServiceWorker'
+import { unregister } from './infrastructure/registerServiceWorker'
 import App from './application/App'
 
 import './main.css'
