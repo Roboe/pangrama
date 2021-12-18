@@ -14,7 +14,7 @@
     "typeface-fira-sans": "^1.1.13"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "prettier": "^2.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
