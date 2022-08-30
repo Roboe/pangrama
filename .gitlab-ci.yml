@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2017-2019 Roberto MF (Roboe)
+# SPDX-FileCopyrightText: 2021 Álvaro Cuesta (alvaro-cuesta)
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 variables:
   SOURCE: $CI_PROJECT_DIR
   BUILD_DESTINATION: $CI_PROJECT_DIR/build

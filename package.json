@@ -17,6 +17,7 @@
     "prettier": "^2.5.1"
   },
   "scripts": {
+    "reuse:lint": "reuse lint",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=./test/custom-test-env.js",

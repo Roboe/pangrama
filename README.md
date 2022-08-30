@@ -32,7 +32,9 @@ Thank you!
 
 ## License
 
-Source code is released under the GPLv3 License. The full text of the license is available in the [LICENSE file](LICENSE).
+This repository follows the [REUSE specification](https://reuse.software/), so each file has a copyright header and the full text of each license is available in the [LICENSES folder](LICENSES/).
+
+Said so, files in this repo are generaly under the GPLv3+ license.
 
 
 ## Pangrams made with this tool
