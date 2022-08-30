@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2021 Roberto MF (Roboe)
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 import UrlField from '../ui/UrlField'
 
 import { writeSearchParamsToUrl } from './searchParams'

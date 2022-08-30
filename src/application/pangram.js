@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2020 Roberto MF (Roboe)
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 import { pipe } from './helpers/functional'
 import { trim, lowercase, isEqualTo as isLetter } from './helpers/string'
 

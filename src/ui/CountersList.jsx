@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2017 Roberto MF (Roboe)
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 function getValidationClass(letterOccurrences) {
   const valuation = letterOccurrences > 0 ? 'pass' : 'fail'
   return `pc-letter-counter_${valuation}`

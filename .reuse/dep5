@@ -1,0 +1,17 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pangrama
+Upstream-Contact: Roberto MF (Roboe) <git@virgulilla.com>
+Source: https://gitlab.com/Roboe/pangrama
+
+Files: .gitignore .prettierrc package.json package-lock.json public/CNAME public/manifest.json README.md
+Copyright: 2017 Roberto MF (Roboe)
+License: CC0-1.0
+
+Files: public/appicon.svg public/favicon.ico public/touchicon.png
+Copyright: 2018 Twitter, Inc
+Copyright: 2018 Roberto MF (Roboe)
+License: CC-BY-4.0
+
+Files: PANGRAMS.md
+Copyright: pangram authors
+License: LicenseRef-all-rights-reserved

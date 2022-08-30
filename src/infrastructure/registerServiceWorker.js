@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2018 Facebook, Inc. and its affiliates
+//
+// SPDX-License-Identifier: MIT
+
 // In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives

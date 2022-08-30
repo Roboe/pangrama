@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2021 Álvaro Cuesta (alvaro-cuesta)
+// SPDX-FileCopyrightText: 2021 Roberto MF (Roboe)
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 import { takeWhile } from './helpers/array'
 import { deduplicate } from './helpers/string'
 

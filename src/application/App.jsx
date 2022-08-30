@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2017 Roberto MF (Roboe)
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 import { useState, useMemo } from 'react'
 
 import { Structure, Header, Main, Footer } from '../ui/Structure'

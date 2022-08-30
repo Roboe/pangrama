@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2021 Álvaro Cuesta (alvaro-cuesta)
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 const Environment = require('jest-environment-jsdom')
 
 // Needed to polyfill TextEncoder/TextDecoder on jsdom
