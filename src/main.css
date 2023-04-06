@@ -6,6 +6,7 @@
 
 @import '~normalize.css/normalize.css';
 @import '~typeface-fira-sans/index.css';
+@import 'material-palette.css';
 
 
 /* Global */
@@ -24,10 +25,10 @@ body,
   height: 100%;
 
   font-family: 'Fira Sans', sans-serif;
-  color: #212121;
+  color: var(--grey-900);
 }
 #pangram-checker a {
-  color: #5d4037;
+  color: var(--brown-700);
   text-decoration: none;
 }
 
@@ -47,7 +48,7 @@ body,
   display: flex;
   justify-content: center;
 
-  background-color: #795548;
+  background-color: var(--brown-500);
 }
 
 .pc-structure--body {
@@ -59,7 +60,7 @@ body,
   flex-direction: column;
   align-items: center;
 
-  background-color: #efebe9;
+  background-color: var(--brown-50);
 }
 
 .pc-header,

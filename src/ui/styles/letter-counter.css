@@ -15,7 +15,7 @@
   align-items: center;
 
   border-radius: 0.8rem;
-  background-color: #d7ccc8;
+  background-color: var(--brown-100);
 }
 .pc-letter-counter--character {
   width: 2rem;
@@ -39,8 +39,8 @@
   order: 1;
 }
 .pc-letter-counter_pass > .pc-letter-counter--character {
-  color: #212121;
-  background-color: #00c853;
+  color: var(--grey-900);
+  background-color: var(--green-A700);
 }
 
 /*
@@ -50,6 +50,6 @@
   order: 0;
 }
 .pc-letter-counter_fail > .pc-letter-counter--character {
-  color: #fbe9e7;
-  background-color: #dd2c00;
+  color: var(--deep-orange-50);
+  background-color: var(--deep-orange-A700);
 }

@@ -8,14 +8,14 @@
   width: 100%;
   margin: 0.5em;
 
-  background-color: #fafafa;
+  background-color: var(--grey-50);
 }
 .pc-text-field,
 .pc-text-field--input {
   border-radius: 0.2em;
 }
 .pc-text-field--label {
-  color: #757575;
+  color: var(--grey-600);
   padding: 0.5em 0.5em 0 0.5em;
 }
 .pc-text-field--input {
@@ -28,22 +28,22 @@
   border: none;
   border-bottom: 2px solid grey;
   background-color: inherit;
-  color: #212121;
+  color: var(--grey-900);
 }
 .pc-text-field--input::selection {
-  color: #fafafa;
-  background-color: #a98274;
+  color: var(--grey-50);
+  background-color: var(--brown-400);
 }
 .pc-text-field--button {
   border: 0;
   white-space: nowrap;
-  background-color: #795548;
-  color: #fafafa;
+  background-color: var(--brown-500);
+  color: var(--grey-50);
   border-radius: 0.2em;
   cursor: pointer;
 }
 .pc-text-field--button:active {
-  background-color: #a98274;
+  background-color: var(--brown-400);
 }
 
 
@@ -81,5 +81,5 @@
   outline: none;
 }
 .pc-text-field--input:focus + .pc-text-field--label {
-  color: #a98274;
+  color: var(--brown-400);
 }
