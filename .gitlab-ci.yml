@@ -3,43 +3,51 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
+stages:
+  - test
+  - build
+  - deploy
+
 variables:
   SOURCE: $CI_PROJECT_DIR
   BUILD_DESTINATION: $CI_PROJECT_DIR/build
   GIT_PUSH_URL: https://$GITLAB_USER_LOGIN:$ACCESS_TOKEN@github.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME.git
   GIT_PUSH_BRANCH: master:gh-pages
 
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - .npm/
+
 reuse_lint:
-  stage: .pre
+  stage: test
   image:
     name: fsfe/reuse:latest
     entrypoint: [""]
   script:
     - reuse --root $CI_PROJECT_DIR lint
 
-npm_build:
+npm_test:
+  stage: test
   image: node:latest
-  stage: build
   before_script:
-    - npm ci
+    - npm ci --cache .npm --prefer-offline
+  script:
+    - npm test
+
+npm_build:
+  stage: build
+  image: node:latest
+  before_script:
+    - npm ci --cache .npm --prefer-offline
   script:
     - npm run build
   artifacts:
     paths:
       - build
     expire_in: 1 week
-  cache:
-    paths:
-      - node_modules/
-
-npm_test:
-  image: node:latest
-  stage: test
-  script:
-    - npm test
-  cache:
-    paths:
-      - node_modules/
 
 git_deploy:
   image: alpine:latest
