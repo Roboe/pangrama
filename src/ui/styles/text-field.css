@@ -9,15 +9,19 @@
   margin: 0.5em;
 
   background-color: var(--grey-50);
+  color: var(--main-text-color);
 }
 .pc-text-field,
 .pc-text-field--input {
   border-radius: 0.2em;
 }
 .pc-text-field--label {
-  color: var(--grey-600);
   padding: 0.5em 0.5em 0 0.5em;
+
+  --label-text-color: var(--grey-600);
+  color: var(--label-text-color);
 }
+
 .pc-text-field--input {
   display: block;
   width: 100%;
@@ -27,23 +31,24 @@
 
   border: none;
   border-bottom: 2px solid grey;
-  background-color: inherit;
-  color: var(--grey-900);
 }
 .pc-text-field--input::selection {
-  color: var(--grey-50);
   background-color: var(--brown-400);
+  color: var(--grey-50);
 }
+
 .pc-text-field--button {
   border: 0;
   white-space: nowrap;
-  background-color: var(--brown-500);
+
+  --button-bg-color: var(--brown-500);
+  background-color: var(--button-bg-color);
   color: var(--grey-50);
   border-radius: 0.2em;
   cursor: pointer;
 }
 .pc-text-field--button:active {
-  background-color: var(--brown-400);
+  --button-bg-color: var(--brown-400);
 }
 
 
@@ -81,5 +86,5 @@
   outline: none;
 }
 .pc-text-field--input:focus + .pc-text-field--label {
-  color: var(--brown-400);
+  --label-text-color: var(--brown-400);
 }

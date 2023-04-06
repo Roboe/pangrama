@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
 
-  color: var(--grey-50);
+  color: var(--header-text-color);
 }
 .pc-header--title {
   font-size: 1.25rem;
