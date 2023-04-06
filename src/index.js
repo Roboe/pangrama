@@ -9,7 +9,7 @@ import App from './application/App'
 
 import './main.css'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('pangram-checker'))
 
 // Disable malfunctioning SW for users who have already registered it
 unregister()
