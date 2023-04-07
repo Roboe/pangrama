@@ -2,9 +2,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-export const Header = ({ title }) => (
+export const Header = ({ title, link }) => (
   <header className="pc-header">
-    <span className="pc-header--title">{title}</span>
+    <a className="pc-header--title" href={link}>
+      {title}
+    </a>
   </header>
 )
 

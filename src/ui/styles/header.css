@@ -18,3 +18,8 @@
   font-size: 1.25rem;
   font-weight: 400;
 }
+
+.pc-header a {
+  color: var(--header-link-color);
+  text-decoration: none;
+}

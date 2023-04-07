@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <Structure
-      header={<Header title="Pangram Checker" />}
+      header={<Header title="Pangram Checker" link={window.location.origin} />}
       main={
         <Main
           intro={
