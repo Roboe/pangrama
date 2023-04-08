@@ -20,9 +20,10 @@ const defaultSentence =
 
 const App = () => {
   const searchParams = window.location.search
-  const { a, p } = useMemo(() => readFromSearchParams(searchParams), [
-    searchParams,
-  ])
+  const { a, p } = useMemo(
+    () => readFromSearchParams(searchParams),
+    [searchParams],
+  )
 
   const [alphabet, updateAlphabet] = useState(a ?? defaultAlphabet)
   const [sentence, updateSentence] = useState(p ?? defaultSentence)

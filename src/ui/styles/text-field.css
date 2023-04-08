@@ -51,7 +51,6 @@
   --button-bg-color: var(--brown-400);
 }
 
-
 /*
   Workaround to reverse the adjacent sibling selector
   HTML order (<input> then <label>) is visually restored with the CSS order property
@@ -67,7 +66,6 @@
   order: 1;
 }
 
-
 /*
   With an action button on the right
 */
@@ -75,7 +73,6 @@
   display: flex;
   flex-direction: row;
 }
-
 
 /*
   When <input> has the focus

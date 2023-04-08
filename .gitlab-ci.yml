@@ -25,7 +25,7 @@ reuse_lint:
   stage: test
   image:
     name: fsfe/reuse:latest
-    entrypoint: [""]
+    entrypoint: ['']
   script:
     - reuse --root $CI_PROJECT_DIR lint
 

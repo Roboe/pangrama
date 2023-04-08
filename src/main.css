@@ -8,7 +8,6 @@
 @import '~typeface-fira-sans/index.css';
 @import 'material-palette.css';
 
-
 /* Global */
 
 html,
@@ -33,7 +32,6 @@ body,
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
-
 
 /* App structure */
 
@@ -80,7 +78,6 @@ body,
 .pc-main {
   flex-grow: 1;
 }
-
 
 /* Blocks, elements and modifiers (BEM) */
 
