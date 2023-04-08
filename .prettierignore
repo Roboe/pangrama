@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2023 Roberto MF (Roboe)
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# By default Prettier ignores files in version control systems directories and node_modules
+
+# Artifacts
+build
+
+# Prefer not to format Markdown tables
+PANGRAMS.md
