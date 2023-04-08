@@ -14,12 +14,16 @@
     "typeface-fira-sans": "^1.1.13"
   },
   "devDependencies": {
+    "husky": "^8.0.3",
     "prettier": "^2.8.7"
   },
   "scripts": {
+    "prepare": "husky install",
+    "husky:uninstall": "husky uninstall",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "format": "prettier --ignore-unknown --write",
+    "format:check": "prettier --ignore-unknown --check",
     "format:all": "npm run format .",
     "test": "react-scripts test --env=./test/custom-test-env.js",
     "eject": "react-scripts eject"

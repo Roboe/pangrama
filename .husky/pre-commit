@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2023 Roberto MF (Roboe)
+#
+# SPDX-License-Identifier: CC0-1.0
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+# List all files modified by this commit (Added, Copied, Modified or Renamed)
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
+[ -z "$FILES" ] && exit 0
+
+# Check format of all selected files
+echo "$FILES" | xargs npm run format:check
+
+exit 0
