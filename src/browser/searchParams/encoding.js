@@ -3,8 +3,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { takeWhile } from './helpers/array'
-import { deduplicate } from './helpers/string'
+import { takeWhile } from '../../libs/array'
+import { deduplicate } from '../../libs/string'
 
 // FROM: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 //

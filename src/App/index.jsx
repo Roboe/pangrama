@@ -4,15 +4,17 @@
 
 import { useState, useMemo } from 'react'
 
-import { Structure, Header, Main, Footer } from '../ui/Structure'
-import NewTabLink from '../ui/NewTabLink'
-import Emoji from '../ui/Emoji'
-import { readFromSearchParams } from './searchParams'
+import { readFromSearchParams } from '../browser/searchParams'
+import Emoji from '../uikit/Emoji'
+import NewTabLink from '../uikit/NewTabLink'
 
+import Structure from './Structure'
 import AlphabetInput from './AlphabetInput'
 import PangramInput from './PangramInput'
 import Validator from './Validator'
 import Share from './Share'
+
+import './style.css'
 
 const defaultAlphabet = 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
 const defaultSentence =
@@ -30,9 +32,14 @@ const App = () => {
 
   return (
     <Structure
-      header={<Header title="Pangram Checker" link={window.location.origin} />}
+      header={
+        <Structure.Header
+          title="Pangram Checker"
+          link={window.location.origin}
+        />
+      }
       main={
-        <Main
+        <Structure.Main
           intro={
             <>
               <p>
@@ -79,7 +86,7 @@ const App = () => {
         />
       }
       footer={
-        <Footer
+        <Structure.Footer
           credits={
             <>
               Hecho por{' '}

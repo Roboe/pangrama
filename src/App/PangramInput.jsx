@@ -2,11 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import TextField from '../ui/TextField'
-
-import { pipe } from './helpers/functional'
-
-import { prepareForShowing as prepareSentence } from './pangram'
+import { pipe } from '../libs/functional'
+import { prepareForShowing as prepareSentence } from '../core/pangram'
+import LabeledTextField from '../uikit/LabeledTextField'
 
 const PangramInput = ({ sentence, updateSentence }) => {
   const handleChange = pipe(
@@ -16,13 +14,15 @@ const PangramInput = ({ sentence, updateSentence }) => {
   )
 
   return (
-    <TextField
+    <LabeledTextField
       id="pangram-input"
       label="Pangrama"
       isMultiline
       rows={3}
-      defaultValue={sentence}
-      handleChange={handleChange}
+      inputProps={{
+        defaultValue: sentence,
+        onChange: handleChange,
+      }}
     />
   )
 }

@@ -2,11 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import TextField from '../ui/TextField'
-
-import { pipe } from './helpers/functional'
-
-import { prepare as prepareAlphabet } from './alphabet'
+import { prepare as prepareAlphabet } from '../core/alphabet'
+import { pipe } from '../libs/functional'
+import LabeledTextField from '../uikit/LabeledTextField'
 
 const AlphabetInput = ({ alphabet, updateAlphabet }) => {
   const handleChange = pipe(
@@ -16,11 +14,13 @@ const AlphabetInput = ({ alphabet, updateAlphabet }) => {
   )
 
   return (
-    <TextField
-      id="alphabet-input"
+    <LabeledTextField
       label="Alfabeto"
-      defaultValue={alphabet}
-      handleChange={handleChange}
+      inputProps={{
+        id: 'alphabet-input',
+        defaultValue: alphabet,
+        onChange: handleChange,
+      }}
     />
   )
 }

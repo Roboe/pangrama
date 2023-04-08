@@ -2,8 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { pipe } from './helpers/functional'
-import { trim, lowercase, isEqualTo as isLetter } from './helpers/string'
+import { pipe } from '../libs/functional'
+import { trim, lowercase, isEqualTo as isLetter } from '../libs/string'
 
 export const prepareForShowing = trim
 

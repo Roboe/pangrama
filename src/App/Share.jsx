@@ -2,9 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import UrlField from '../ui/UrlField'
-
-import { writeSearchParamsToUrl } from './searchParams'
+import { writeSearchParamsToUrl } from '../browser/searchParams'
+import UrlTextField from '../uikit/UrlTextField'
 
 const copyTextToClipboard = (text) => {
   if (!navigator.clipboard) return false
@@ -23,7 +22,7 @@ const Share = ({ alphabet, sentence, children }) => {
   }
 
   return (
-    <UrlField
+    <UrlTextField
       value={url.href}
       handleClick={handleCopyButton}
       buttonChildren={children}

@@ -3,8 +3,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import { pipe } from '../../libs/functional'
+
 import { decode, encode } from './encoding'
-import { pipe } from './helpers/functional'
 
 const oldDecode = pipe(atob, decodeURIComponent)
 

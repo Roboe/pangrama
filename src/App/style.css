@@ -1,0 +1,32 @@
+/*
+ * SPDX-FileCopyrightText: 2017 Roberto MF (Roboe)
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+@import '~normalize.css/normalize.css';
+@import '~typeface-fira-sans/index.css';
+@import './material-palette.css';
+
+html,
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#pangram-checker {
+  height: 100%;
+}
+
+#pangram-checker {
+  --main-bg-color: var(--brown-50);
+  --main-text-color: var(--grey-900);
+  --main-link-color: var(--brown-700);
+
+  font-family: 'Fira Sans', sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}

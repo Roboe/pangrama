@@ -4,10 +4,9 @@
 
 import ReactDOM from 'react-dom'
 
-import { unregister } from './infrastructure/registerServiceWorker'
-import App from './application/App'
+import { unregister } from './browser/registerServiceWorker'
 
-import './main.css'
+import App from './App'
 
 ReactDOM.render(<App />, document.getElementById('pangram-checker'))
 

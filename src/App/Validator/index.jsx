@@ -2,12 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import CountersList from '../ui/CountersList'
-
 import {
   prepareForValidating as prepareSentence,
   countAllLetters,
-} from './pangram'
+} from '../../core/pangram'
+
+import CountersList from './CountersList'
 
 const Validator = ({ alphabet, sentence }) => {
   const lowercaseSentence = prepareSentence(sentence)

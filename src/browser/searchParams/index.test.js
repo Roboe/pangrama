@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { readFromSearchParams } from './searchParams'
+import { readFromSearchParams } from '.'
 
 const PLAIN_ALPHABET = 'aábcdeéfghiíjklmnñoópqrstuúüvwxyz'
 const PLAIN_SENTENCE =
