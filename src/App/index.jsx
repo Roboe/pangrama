@@ -8,7 +8,7 @@ import { readFromSearchParams } from '../browser/searchParams'
 import Emoji from '../uikit/Emoji'
 import NewTabLink from '../uikit/NewTabLink'
 
-import Structure from './Structure'
+import Layout from './Layout'
 import AlphabetInput from './AlphabetInput'
 import PangramInput from './PangramInput'
 import Validator from './Validator'
@@ -31,15 +31,12 @@ const App = () => {
   const [sentence, updateSentence] = useState(p ?? defaultSentence)
 
   return (
-    <Structure
+    <Layout
       header={
-        <Structure.Header
-          title="Pangram Checker"
-          link={window.location.origin}
-        />
+        <Layout.Header title="Pangram Checker" link={window.location.origin} />
       }
       main={
-        <Structure.Main
+        <Layout.Main
           intro={
             <>
               <p>
@@ -86,7 +83,7 @@ const App = () => {
         />
       }
       footer={
-        <Structure.Footer
+        <Layout.Footer
           credits={
             <>
               Hecho por{' '}
