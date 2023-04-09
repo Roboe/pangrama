@@ -15,13 +15,13 @@ const PangramInput = ({ sentence, updateSentence }) => {
 
   return (
     <LabeledTextField
-      id="pangram-input"
       label="Pangrama"
       isMultiline
-      rows={3}
       inputProps={{
+        id: 'pangram-input',
         defaultValue: sentence,
         onChange: handleChange,
+        rows: 3,
       }}
     />
   )
