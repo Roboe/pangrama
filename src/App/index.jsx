@@ -87,7 +87,7 @@ const App = () => {
           credits={
             <>
               Hecho por{' '}
-              <NewTabLink url="http://virgulilla.com">@RoboePi</NewTabLink>{' '}
+              <NewTabLink url="https://virgulilla.com">Roboe</NewTabLink>{' '}
               <Emoji emoji="&#x1f989;" label="Búho" />
             </>
           }
