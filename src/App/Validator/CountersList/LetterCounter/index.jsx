@@ -2,22 +2,26 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import classNames from 'classnames'
+
 import './style.css'
 
-function getValidationClass(letterOccurrences) {
-  const valuation = letterOccurrences > 0 ? 'pass' : 'fail'
-  return `pc-letter-counter_${valuation}`
-}
+const doesPassValitation = (letterOccurrences) => letterOccurrences > 0
 
-const LetterCounter = ({ letter, occurrences }) => (
-  <li
-    className={`pc-counters-list--item pc-letter-counter ${getValidationClass(
-      occurrences,
-    )}`}
-  >
-    <span className="pc-letter-counter--character">{letter}</span>
-    <span className="pc-letter-counter--number">{occurrences}</span>
-  </li>
-)
+const LetterCounter = ({ letter, occurrences }) => {
+  const isValid = doesPassValitation(occurrences)
+
+  return (
+    <li
+      className={classNames('pc-counters-list--item', 'pc-letter-counter', {
+        'pc-letter-counter_pass': isValid,
+        'pc-letter-counter_fail': !isValid,
+      })}
+    >
+      <span className="pc-letter-counter--character">{letter}</span>
+      <span className="pc-letter-counter--number">{occurrences}</span>
+    </li>
+  )
+}
 
 export default LetterCounter

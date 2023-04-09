@@ -2,11 +2,15 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import classNames from 'classnames'
+
 import './style.css'
 
 const Main = ({ intro, sections }) => (
   <main className="pc-main">
-    <section className="pc-main--section pc-main--section_intro">
+    <section
+      className={classNames('pc-main--section', 'pc-main--section_intro')}
+    >
       {intro}
     </section>
     {sections.map((section, index) => (
